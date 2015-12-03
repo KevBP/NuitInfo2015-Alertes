@@ -57,7 +57,7 @@ $conn->close();
                 if ($result->num_rows > 0) {
                 // output data of each row
                     while($row = $result->fetch_assoc()) {
-                        echo "id: " . $row["titre"] . "<br>";
+                        echo "id: " . $row["titre_alerte"] . "<br>";
                     }
                 } else {
                     echo "0 results";
