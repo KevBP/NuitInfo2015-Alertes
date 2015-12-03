@@ -45,7 +45,7 @@ $conn->close();
                             <option value="5">5</option>
                         </select>
                         <span class="input-group-btn">
-                            <button type="submit" class="btn btn-default">Send alerte!</button>
+                            <button type="submit" class="btn btn-default">Envoyer alerte !</button>
                         </span>
                     </div>
                 </fieldset>
