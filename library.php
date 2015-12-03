@@ -10,6 +10,8 @@
 			return NULL;
 		}
 	
+		mysqli_set_charset($con, "utf8");
+		
 		return $con;
 }
 ?>
