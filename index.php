@@ -15,7 +15,7 @@
                         <label for="message">Message</label>
                         <input type="text" class="form-control" id="message" name="message" placeholder="Message">
                         <label for="date-evenement">Date d'évènement</label>
-                        <input type="date" class="form-control" id="date-evenement" name="date-evenement" placeholder="Date d'évènement">
+                        <input type="date" class="form-control" id="date-evenement" name="date-evenement" placeholder="Date d'évènement" data-date-format="dd-mm-yyyy">
                         <script>if (screen.width>=768){$('#date-evenement').datepicker()}</script>
                         <label for="heure-evenement">Date d'évènement</label>
                         <input type="time" class="form-control" id="heure-evenement" name="heure-evenement" placeholder="Heure d'évènement">
