@@ -7,7 +7,7 @@ if (mysqli_connect_errno()) {
     echo "Failed to connect to MySQL: " . mysqli_connect_error();
 }
 
-$sql = "SELECT titre_alerte FROM ALERTE ORDER BY date_alerte DESC";
+$sql = "SELECT titre_alerte, niveau_alerte FROM ALERTE ORDER BY date_alerte DESC";
 $result = $conn->query($sql);
 
 $conn->close();
@@ -58,7 +58,13 @@ $conn->close();
                     echo "<ul class=\"list-group\">";
                     // output data of each row
                     while($row = $result->fetch_assoc()) {
-                        echo "<li class=\"list-group-item\">" . $row["titre_alerte"] . "</li>";
+                        switch($row['niveau_alerte']){
+                            case "1" : echo "<li class=\"list-group-item\">" . $row["titre_alerte"] . "</li>"; break;
+                            case "2" : echo "<li class=\"list-group-item list-group-item-success\">" . $row["titre_alerte"] . "</li>"; break;
+                            case "3" : echo "<li class=\"list-group-item list-group-item-info\">" . $row["titre_alerte"] . "</li>"; break;
+                            case "4" : echo "<li class=\"list-group-item list-group-item-warning\">" . $row["titre_alerte"] . "</li>"; break;
+                            case "5" : echo "<li class=\"list-group-item list-group-item-danger\">" . $row["titre_alerte"] . "</li>"; break;
+                        }
                     }
                     echo "</ul>";
                 } else {
