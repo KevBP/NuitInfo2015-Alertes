@@ -1,5 +1,5 @@
 <?php
-
+require("library.php");
 $con = connectToDatabase();
 
 // Check connection
