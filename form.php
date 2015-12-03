@@ -15,9 +15,8 @@ $heure_evenement = mysqli_real_escape_string($con, $_POST['heure-evenement']);
 $niveau = mysqli_real_escape_string($con, $_POST['niveau']);
 
 $sql = "INSERT INTO ALERTE
-		(id_alerte, message_alerte, titre_alerte, 
-		localisation_alerte, date_alerte, niveau_alerte) 
-		VALUES (NULL, $message, $titre, $localisation, $date_evenement, $niveau)";
+		(message_alerte, titre_alerte, localisation_alerte, date_alerte, niveau_alerte) 
+		VALUES ($message, $titre, $localisation, $date_evenement, $niveau)";
 
 $req = mysqli_query($sql);
 
