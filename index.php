@@ -52,6 +52,7 @@ $conn->close();
             </form>
         </div>
         <div class="col-lg-6">
+            <h3>Dernières alertes</h3>
             <?php
                 if ($result->num_rows > 0) {
                     echo "<div class=\"list-group\">";
