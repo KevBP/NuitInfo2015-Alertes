@@ -9,7 +9,11 @@
 
 <!--<img src="http://i.imgur.com/aEew57N.png" alt="Super Chien" class="img-responsive"/>-->
 Voici la liste des sponsors, elle doit toujours être visible avec leur logo (en bas de page ça convient tout à fait) :
-<a href="http://www.univ-fcomte.fr/"><img src="logo-ufc.jpeg" alt="UFC" class="img-responsive" style="width:200px;"/></a>
+<p class="row">
+    <p class="col-lg-2 col-md-offset-5 sponsors">
+        <a href="http://www.univ-fcomte.fr/"><img src="logo-ufc.jpeg" alt="UFC" class="img-responsive" style="width:200px;"/></a>
+    </p>
+</p>
 <p class="row">
 <p class="col-lg-2 sponsors">
     <a href="http://disc.univ-fcomte.fr/"><img src="logo-disc.png" alt="DISC" class="img-responsive" /></a>
