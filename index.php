@@ -18,7 +18,6 @@ $conn->close();
 
 <?php require("header.php"); ?>
 <div class="container">
-    <h1>Equipe Daddy Staline</h1>
     <h2>Une anomalie, une urgence, un danger imminent ? Partagez-le pour le bien de tous !</h2>
     <div class="row">
         <div class="col-lg-6">
@@ -35,7 +34,7 @@ $conn->close();
                         <label for="date-evenement">Date d'évènement</label>
                         <input type="date" class="form-control" id="date-evenement" name="date-evenement" placeholder="Date d'évènement" data-date-format="yyyy-mm-dd">
                         <script>if (screen.width>=768 && navigator.userAgent.toLowerCase().indexOf('firefox') > -1){$('#date-evenement').datepicker()}</script>
-                        <label for="heure-evenement">Date d'évènement</label>
+                        <label for="heure-evenement">Heure d'évènement</label>
                         <input type="time" class="form-control" id="heure-evenement" name="heure-evenement" placeholder="Heure d'évènement">
                         <label for="niveau">Niveau</label>
                         <select id="niveau" name="niveau">
