@@ -13,7 +13,7 @@
                         <label for="alerte">Localisation</label>
                         <input type="text" class="form-control" id="localisation" name="localisation" placeholder="Localisation">
                         <label for="date-evenement">Date d'évènement</label>
-                        <input type="date" class="form-control" id="date-evenement" name="date-evenement" placeholder="Date d'évènement">
+                        <input type="date" class="form-control" id="date-evenement" name="date-evenement" placeholder="Date d'évènement" data-date-format="yyyy-mm-dd">
                         <label for="heure-evenement">Date d'évènement</label>
                         <input type="time" class="form-control" id="heure-evenement" name="heure-evenement" placeholder="Heure d'évènement">
                         <label for="niveau">Niveau</label>
