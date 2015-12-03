@@ -1,6 +1,7 @@
 <?php
-
-$con=mysqli_connect("nuitinfo-db.ofni.asso.fr","web-user","JZDfT6QwZhppvVfF","daddy-staline");
+$user = "web-user";
+$pwd = "JZDfT6QwZhppvVfF";
+$con=mysqli_connect("localhost", $user, $pwd,"daddy-staline");
 
 // Check connection
 if (mysqli_connect_errno()) {
