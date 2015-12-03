@@ -15,7 +15,7 @@ if (isset($_POST['date-evenement'])) {
 $titre = mysqli_real_escape_string($con, $_POST['titre']);
 $message = mysqli_real_escape_string($con, $_POST['message']);
 $localisation = mysqli_real_escape_string($con, $_POST['localisation']);
-$date_evenement = mysqli_real_escape($_POST['date-evenement']);
+$date_evenement = mysqli_real_escape_string($_POST['date-evenement']);
 $heure_evenement = mysqli_real_escape_string($con, $_POST['heure-evenement']);
 $niveau = mysqli_real_escape_string($con, $_POST['niveau']);
 
