@@ -1,17 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Equipe Daddy Staline</title>
-  <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="/css/styles.css" />
-  <!-- Latest compiled and minified JavaScript -->
-  <script type="text/javascript" src="/js/jquery.js"></script>
-  <script type="text/javascript" src="/js/bootstrap.min.js"></script>
-</head>
-<body>
+<?php require("header.php"); ?>
 <div class="container">
   <h1>Equipe Daddy Staline</h1>
    <div class="row">
