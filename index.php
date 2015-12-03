@@ -8,10 +8,12 @@
                 <fieldset>
                 <legend>Lancer une alerte !</legend>
                     <div class="form-group">
-                        <label for="message">Message</label>
-                        <input type="text" class="form-control" id="message" name="message" placeholder="Message">
+                        <label for="titre">Titre</label>
+                        <input type="text" class="form-control" id="titre" name="titre" placeholder="Titre">
                         <label for="alerte">Localisation</label>
                         <input type="text" class="form-control" id="localisation" name="localisation" placeholder="Localisation">
+                        <label for="message">Message</label>
+                        <input type="text" class="form-control" id="message" name="message" placeholder="Message">
                         <label for="date-evenement">Date d'évènement</label>
                         <input type="date" class="form-control" id="date-evenement" name="date-evenement" placeholder="Date d'évènement">
                         <script>if (screen.width>=768){$('#date-evenement').datepicker()}</script>
