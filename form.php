@@ -9,7 +9,7 @@ if (mysqli_connect_errno()) {
 }
 	
 if (isset($_POST['date-evenement'])) {
-	echo "Bite";
+	echo $_POST['date-evenement'];
 }
 
 $titre = mysqli_real_escape_string($con, $_POST['titre']);
