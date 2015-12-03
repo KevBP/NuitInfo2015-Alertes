@@ -1,8 +1,8 @@
 <?php
-if (isset($_POST['titre'])
-		&& isset($_POST['message'])
-		&& isset($_POST['localisation'])) {
-			echo "bite";
+if (!isset($_POST['titre'])
+		|| !isset($_POST['message'])
+		|| !isset($_POST['localisation'])) {
+	echo "bite";
 }
 else {
 			
