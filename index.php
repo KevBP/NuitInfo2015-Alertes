@@ -60,10 +60,10 @@ $conn->close();
                     while($row = $result->fetch_assoc()) {
                         switch($row['niveau_alerte']){
                             case "1" : echo "<a href='#' class=\"list-group-item\"><h4 class='list-group-item-heading'>" . $row["titre_alerte"] . "</h4><p class='list-group-item-text'>" . $row["message_alerte"] . "</p></a>"; break;
-                            case "2" : echo "<a href='#' class=\"list-group-item list-group-item-success\">" . $row["titre_alerte"] . "</a>"; break;
-                            case "3" : echo "<a href='#' class=\"list-group-item list-group-item-info\">" . $row["titre_alerte"] . "</a>"; break;
-                            case "4" : echo "<a href='#' class=\"list-group-item list-group-item-warning\">" . $row["titre_alerte"] . "</a>"; break;
-                            case "5" : echo "<a href='#' class=\"list-group-item list-group-item-danger\">" . $row["titre_alerte"] . "</a>"; break;
+                            case "2" : echo "<a href='#' class=\"list-group-item list-group-item-success\"><h4 class='list-group-item-heading'>" . $row["titre_alerte"] . "</h4><p class='list-group-item-text'>" . $row["message_alerte"] . "</p></a>"; break;
+                            case "3" : echo "<a href='#' class=\"list-group-item list-group-item-info\"><h4 class='list-group-item-heading'>" . $row["titre_alerte"] . "</h4><p class='list-group-item-text'>" . $row["message_alerte"] . "</p></a>"; break;
+                            case "4" : echo "<a href='#' class=\"list-group-item list-group-item-warning\"><h4 class='list-group-item-heading'>" . $row["titre_alerte"] . "</h4><p class='list-group-item-text'>" . $row["message_alerte"] . "</p></a>"; break;
+                            case "5" : echo "<a href='#' class=\"list-group-item list-group-item-danger\"><h4 class='list-group-item-heading'>" . $row["titre_alerte"] . "</h4><p class='list-group-item-text'>" . $row["message_alerte"] . "</p></a>"; break;
                         }
                     }
                     echo "</div>";
