@@ -14,7 +14,7 @@
                         <input type="text" class="form-control" id="localisation" name="localisation" placeholder="Localisation">
                         <label for="date-evenement">Date d'évènement</label>
                         <input type="date" class="form-control" id="date-evenement" name="date-evenement" placeholder="Date d'évènement">
-                        <script>if ((screen.width>=768){$('#date-evenement').datepicker()}</script>
+                        <script>if (screen.width>=768){$('#date-evenement').datepicker()}</script>
                         <label for="heure-evenement">Date d'évènement</label>
                         <input type="time" class="form-control" id="heure-evenement" name="heure-evenement" placeholder="Heure d'évènement">
                         <label for="niveau">Niveau</label>
