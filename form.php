@@ -20,7 +20,7 @@ $sql = "INSERT INTO ALERTE
 
 echo $sql;
 
-$req = mysqli_query($sql);
+$req = mysqli_query($con, $sql);
 echo mysqli_error($con);
 
 mysqli_close($con);
