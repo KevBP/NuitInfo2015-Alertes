@@ -55,10 +55,12 @@ $conn->close();
         <div class="col-lg-6">
             <?php
                 if ($result->num_rows > 0) {
-                // output data of each row
+                    echo "<ul class=\"list-group\">";
+                    // output data of each row
                     while($row = $result->fetch_assoc()) {
-                        echo "id: " . $row["titre_alerte"] . "<br>";
+                        echo "<li class=\"list-group-item\">" . $row["titre_alerte"] . "</li>";
                     }
+                    echo "</ul>";
                 } else {
                     echo "0 results";
                 }
