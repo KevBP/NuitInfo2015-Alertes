@@ -1,3 +1,21 @@
+<?php
+
+require("library.php");
+$conn = connectToDatabase();
+// Check connection
+if (mysqli_connect_errno()) {
+    echo "Failed to connect to MySQL: " . mysqli_connect_error();
+}
+
+$sql = "SELECT titre_alerte FROM ALERTE ORDER BY date_alerte DESC";
+$result = $conn->query($sql);
+
+$conn->close();
+
+
+
+?>
+
 <?php require("header.php"); ?>
 <div class="container">
     <h1>Equipe Daddy Staline</h1>
@@ -35,13 +53,16 @@
             </form>
         </div>
         <div class="col-lg-6">
-            <form class="form-inline" action="form.php" method="post">
-                <div class="form-group">
-                    <label for="signalement">Name</label>
-                    <input type="text" class="form-control" id="signalement" placeholder="Jane Doe">
-                    <button type="submit" class="btn btn-default">Send invitation</button>
-                </div>
-            </form>
+            <?php
+                if ($result->num_rows > 0) {
+                // output data of each row
+                    while($row = $result->fetch_assoc()) {
+                        echo "id: " . $row["titre"] . "<br>";
+                    }
+                } else {
+                    echo "0 results";
+                }
+            ?>
         </div>
     </div>
     <?php require("footer.php"); ?>
