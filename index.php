@@ -4,7 +4,7 @@
     <h2>Une anomalie, une urgence, un danger imminent ? Partagez-le pour le bien de tous !</h2>
     <div class="row">
         <div class="col-lg-6">
-            <form class="form-inline" action="form.php" method="post">
+            <form class="form" action="form.php" method="post">
                 <fieldset>
                 <legend>Lancer une alerte !</legend>
                     <div class="form-group">
