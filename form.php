@@ -16,7 +16,7 @@ $niveau = mysqli_real_escape_string($con, $_POST['niveau']);
 
 $sql = "INSERT INTO ALERTE
 		(message_alerte, titre_alerte, localisation_alerte, date_alerte, niveau_alerte) 
-		VALUES ($message, $titre, $localisation, $date_evenement, $niveau)";
+		VALUES ('$message', '$titre', '$localisation', '$date_evenement', '$niveau')";
 
 echo $sql;
 
