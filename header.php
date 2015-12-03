@@ -1,20 +1,10 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: nomce
- * Date: 03/12/15
- * Time: 21:23
- */
-
-?>
-
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Equipe Daddy Staline</title>
+    <title>Lanceur d'alertes</title>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css" />
     <link rel="stylesheet" href="/css/styles.css" />
