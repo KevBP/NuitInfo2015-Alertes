@@ -13,13 +13,15 @@
                         <label for="alerte">Localisation</label>
                         <input type="text" class="form-control" id="localisation" name="localisation" placeholder="Localisation">
                         <label for="date-evenement">Date d'évènement</label>
-                        <input type="datetime" class="form-control" id="date-evenement" name="date-evenement" placeholder="Date d'évènement">
+                        <input type="date" class="form-control" id="date-evenement" name="date-evenement" placeholder="Date d'évènement">
+                        <label for="heure-evenement">Date d'évènement</label>
+                        <input type="time" class="form-control" id="heure-evenement" name="heure-evenement" placeholder="Heure d'évènement">
                         <label for="niveau">Niveau</label>
                         <select id="niveau" name="niveau">
-                            <option value="1">Volvo</option>
-                            <option value="2">Saab</option>
-                            <option value="3">Mercedes</option>
-                            <option value="4">Audi</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
                             <option value="5">5</option>
                         </select>
                         <span class="input-group-btn">
