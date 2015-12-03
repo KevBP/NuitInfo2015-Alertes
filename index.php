@@ -15,8 +15,8 @@
                         <label for="message">Message</label>
                         <input type="text" class="form-control" id="message" name="message" placeholder="Message">
                         <label for="date-evenement">Date d'évènement</label>
-                        <input type="date" class="form-control" id="date-evenement" name="date-evenement" placeholder="Date d'évènement" data-date-format="dd-mm-yyyy">
-                        <script>if (screen.width>=768){$('#date-evenement').datepicker()}</script>
+                        <input type="date" class="form-control" id="date-evenement" name="date-evenement" placeholder="Date d'évènement" data-date-format="yyyy-mm-dd">
+                        <script>if (screen.width>=768 && navigator.userAgent.toLowerCase().indexOf('firefox') > -1){$('#date-evenement').datepicker()}</script>
                         <label for="heure-evenement">Date d'évènement</label>
                         <input type="time" class="form-control" id="heure-evenement" name="heure-evenement" placeholder="Heure d'évènement">
                         <label for="niveau">Niveau</label>
