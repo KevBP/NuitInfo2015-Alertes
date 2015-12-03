@@ -1,15 +1,10 @@
 <?php
-$user = "web-user";
-$pwd = "JZDfT6QwZhppvVfF";
-$con=mysqli_connect("localhost", $user, $pwd,"daddy-staline");
+
+$con = connectToDatabase();
 
 // Check connection
 if (mysqli_connect_errno()) {
 	echo "Failed to connect to MySQL: " . mysqli_connect_error();
-}
-	
-if (isset($_POST['date-evenement'])) {
-	echo $_POST['date-evenement'];
 }
 
 $titre = mysqli_real_escape_string($con, $_POST['titre']);
@@ -19,5 +14,12 @@ $date_evenement = mysqli_real_escape_string($con, $_POST['date-evenement']);
 $heure_evenement = mysqli_real_escape_string($con, $_POST['heure-evenement']);
 $niveau = mysqli_real_escape_string($con, $_POST['niveau']);
 
-echo $titre . " " . $message . " " . $localisation . " " . $date_evenement . " " . $heure_evenement . " " . $niveau;
+$sql = "INSERT INTO `ALERTE`
+		(`id_alerte`, `message_alerte`, `titre_alerte`, 
+		`localisation_alerte`, `date_alerte`, `niveau_alerte`) 
+		VALUES (NULL, $message, $titre, $localisation, $date_evenement, $niveau)";
+
+$req = mysqli_query($sql);
+
+mysqli_close($con);
 ?>
