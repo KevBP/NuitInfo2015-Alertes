@@ -8,7 +8,6 @@
                 <fieldset>
                 <legend>Lancer une alerte !</legend>
                     <div class="form-group">
-
                         <label for="titre">Titre</label>
                         <input type="text" class="form-control" id="titre" name="titre" placeholder="Titre">
                         <label for="alerte">Localisation</label>
