@@ -7,7 +7,7 @@ if (mysqli_connect_errno()) {
     echo "Failed to connect to MySQL: " . mysqli_connect_error();
 }
 
-$sql = "SELECT titre_alerte, niveau_alerte FROM ALERTE ORDER BY date_alerte DESC";
+$sql = "SELECT titre_alerte, niveau_alerte,message_alerte FROM ALERTE ORDER BY date_alerte DESC";
 $result = $conn->query($sql);
 
 $conn->close();
@@ -55,18 +55,18 @@ $conn->close();
         <div class="col-lg-6">
             <?php
                 if ($result->num_rows > 0) {
-                    echo "<ul class=\"list-group\">";
+                    echo "<div class=\"list-group\">";
                     // output data of each row
                     while($row = $result->fetch_assoc()) {
                         switch($row['niveau_alerte']){
-                            case "1" : echo "<li class=\"list-group-item\">" . $row["titre_alerte"] . "</li>"; break;
-                            case "2" : echo "<li class=\"list-group-item list-group-item-success\">" . $row["titre_alerte"] . "</li>"; break;
-                            case "3" : echo "<li class=\"list-group-item list-group-item-info\">" . $row["titre_alerte"] . "</li>"; break;
-                            case "4" : echo "<li class=\"list-group-item list-group-item-warning\">" . $row["titre_alerte"] . "</li>"; break;
-                            case "5" : echo "<li class=\"list-group-item list-group-item-danger\">" . $row["titre_alerte"] . "</li>"; break;
+                            case "1" : echo "<a href='#' class=\"list-group-item\"><h4 class='list-group-item-heading'>" . $row["titre_alerte"] . "</h4><p class='list-group-item-text'>" . $row["message_alerte"] . "</p></a>"; break;
+                            case "2" : echo "<a href='#' class=\"list-group-item list-group-item-success\">" . $row["titre_alerte"] . "</a>"; break;
+                            case "3" : echo "<a href='#' class=\"list-group-item list-group-item-info\">" . $row["titre_alerte"] . "</a>"; break;
+                            case "4" : echo "<a href='#' class=\"list-group-item list-group-item-warning\">" . $row["titre_alerte"] . "</a>"; break;
+                            case "5" : echo "<a href='#' class=\"list-group-item list-group-item-danger\">" . $row["titre_alerte"] . "</a>"; break;
                         }
                     }
-                    echo "</ul>";
+                    echo "</div>";
                 } else {
                     echo "0 results";
                 }
