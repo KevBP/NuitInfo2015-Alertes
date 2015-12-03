@@ -10,7 +10,7 @@
                     <div class="form-group">
                         <label for="alerte">Name</label>
                         <input type="text" class="form-control" id="alerte" placeholder="Jane Doe">
-                        <button type="submit" class="btn btn-default">Send invitation</button>
+                        <button type="submit" class="btn btn-default">Send alerte!</button>
                     </div>
                 </fieldset>
             </form>
