@@ -18,7 +18,10 @@ $sql = "INSERT INTO ALERTE
 		(message_alerte, titre_alerte, localisation_alerte, date_alerte, niveau_alerte) 
 		VALUES ($message, $titre, $localisation, $date_evenement, $niveau)";
 
+echo $sql;
+
 $req = mysqli_query($sql);
+echo mysqli_error($con);
 
 mysqli_close($con);
 ?>
