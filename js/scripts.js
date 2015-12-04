@@ -8,9 +8,9 @@ $('#alerteModal').on('show.bs.modal', function (event) {
     var modal = $(this);
     modal.find('.modal-title').text('Alerte ' + titre);
     modal.find('#message-alerte').text(message);
-    modal.find('#date-alerte').text(dalerte);
-    modal.find('#localisation-alerte').text(localisation);
-    modal.find('#niveau-alerte').text(niveau);
+    modal.find('#date-alerte').text('Date : ' + dalerte);
+    modal.find('#localisation-alerte').text('Localisation : ' + localisation);
+    modal.find('#niveau-alerte').text('Niveau : ' + niveau);
 });
 
 $(document).ready(function(){
