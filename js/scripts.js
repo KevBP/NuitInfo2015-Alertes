@@ -5,7 +5,7 @@ $(document).ready(function(){
     })});
 
 
-$("#tips").click(function(){
+$("#tips").onload(function(){
 	var tips = showTips();
 	$("#tips").innerHTML = tips;
 	alert(showTips());
