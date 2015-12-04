@@ -36,7 +36,6 @@ Voici la liste des sponsors, elle doit toujours être visible avec leur logo (en
 </div>
 
 <!-- Latest compiled and minified JavaScript -->
-<script type="text/javascript" src="/js/jquery.js"></script>
 <script type="text/javascript" src="/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="/js/bootstrap-datepicker.js"></script>
 <script type="text/javascript" src="/js/scripts.js"></script>
