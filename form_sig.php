@@ -11,6 +11,7 @@
 			
 		$nom = mysqli_real_escape_string($con, htmlentities($_POST['nom_sig']));
 		$age = mysqli_real_escape_string($con, htmlentities($_POST['age_sig']));
+		$age = (int) $age;
 		$sexe = mysqli_real_escape_string($con, htmlentities($_POST['sexe_sig']));
 		$description = mysqli_real_escape_string($con, htmlentities($_POST['description_sig']));
 		echo isset($_POST['id-alerte']);
@@ -20,12 +21,13 @@
 			echo "Erreur nom";
 		}
 		
+		
 		if (!is_int($age) || $age < 0 || $age > 110) {
 			$erreurs = true;
 			echo "Erreur age";
 		}
 		
-		if ($sexe != "H" || $sexe !="F") {
+		if ($sexe != 'H' && $sexe !='F') {
 			$erreurs = true;
 			echo "Erreur sexe";
 		}

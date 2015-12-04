@@ -8,7 +8,7 @@ if (mysqli_connect_errno()) {
 }
 
 if (isset($_GET["search"])){
-    $sql = "SELECT * FROM ALERTE WHERE titre_alerte LIKE %" . mysqli_real_escape_string($con, htmlentities($_GET['search'])) . "%";
+    $sql = "SELECT * FROM ALERTE WHERE titre_alerte LIKE %'" . mysqli_real_escape_string($con, htmlentities($_GET['search'])) . "'%";
     $result = $conn->query($sql);
 
     $conn->close();
@@ -20,7 +20,7 @@ if (isset($_GET["search"])){
 <?php require("header.php"); ?>
 <div class="container">
     <h2>Une anomalie, une urgence, un danger imminent ? Partagez-le pour le bien de tous !</h2>
-    <form class="form" action="index.php" method="get">
+    <form class="form" action="search.php" method="get">
         <div class="input-group">
             <input type="text" name="search" class="form-control" placeholder="Search for...">
               <span class="input-group-btn">
