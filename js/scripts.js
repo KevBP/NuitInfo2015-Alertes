@@ -9,7 +9,6 @@ $('#alerteModal').on('show.bs.modal', function (event) {
     modal.find('#message-alerte').text(message);
     modal.find('#date-alerte').text(dalerte);
     modal.find('#localisation-alerte').text(localisation);
-    alert(dalerte);
 });
 
 $(document).ready(function(){
