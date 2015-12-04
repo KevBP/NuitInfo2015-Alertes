@@ -8,7 +8,7 @@ if (mysqli_connect_errno()) {
 }
 
 if (isset($_GET["search"])){
-    $sql = "SELECT * FROM ALERTE WHERE titre_alerte LIKE %" . mysqli_real_escape_string($con, htmlentities($_GET['search'])) . "% ORDER BY date_soumission_alerte DESC limit 3";
+    $sql = "SELECT * FROM ALERTE WHERE titre_alerte LIKE %" . mysqli_real_escape_string($con, htmlentities($_GET['search'])) . "%";
     $result = $conn->query($sql);
 
     $conn->close();
