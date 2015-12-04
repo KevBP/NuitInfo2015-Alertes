@@ -14,6 +14,7 @@ $('#signalementModal').on('show.bs.modal', function (event) {
 $(document).ready(function(){
     $.ajax({url: "tips.php", success: function(result){
         $("#tips").html(result);
+        callBackTips();
     }});
 });
 
