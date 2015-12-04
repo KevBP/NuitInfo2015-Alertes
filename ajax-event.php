@@ -6,6 +6,7 @@
  * Time: 03:35
  */
 require("library.php");
+$con = connectToDatabase();
 
 if (isset($_GET['event'])){
     echo "orig " . $_GET['event'] ." \n";
