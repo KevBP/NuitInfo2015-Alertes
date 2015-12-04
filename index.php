@@ -71,7 +71,7 @@ $conn->close();
                     echo "0 results";
                 }
             ?>
-            <button type="button" class="btn btn-default" id="plus-events">Plus.. :)</button>
+            <button type="button" class="btn btn-default" id="plus-events" data-nb="3">Plus.. :)</button>
 
             <div class="modal fade" id="alerteModal" tabindex="-1" role="dialog" aria-labelledby="alerteModalLabel">
                 <div class="modal-dialog" role="document">
