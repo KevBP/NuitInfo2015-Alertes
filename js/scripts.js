@@ -5,12 +5,14 @@ $('#alerteModal').on('show.bs.modal', function (event) {
     var dalerte = button.data('datealerte');
     var localisation = button.data('localisationalerte');
     var niveau = button.data('niveaualerte');
+    var idalerte = button.data('idalerte');
     var modal = $(this);
     modal.find('.modal-title').text('Alerte ' + titre);
     modal.find('#message-alerte').text(message);
     modal.find('#date-alerte').text('Date : ' + dalerte);
     modal.find('#localisation-alerte').text('Localisation : ' + localisation);
     modal.find('#niveau-alerte').text('Niveau : ' + niveau);
+    modal.find('#id-alerte').text('');
 });
 
 $(document).ready(function(){

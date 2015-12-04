@@ -7,7 +7,7 @@ if (mysqli_connect_errno()) {
     echo "Failed to connect to MySQL: " . mysqli_connect_error();
 }
 
-$sql = "SELECT * FROM ALERTE ORDER BY date_alerte DESC";
+$sql = "SELECT * FROM ALERTE ORDER BY date_soumission_alerte DESC limit 3";
 $result = $conn->query($sql);
 
 $conn->close();
@@ -19,7 +19,7 @@ $conn->close();
 <?php require("header.php"); ?>
 <div class="container">
     <h2>Une anomalie, une urgence, un danger imminent ? Partagez-le pour le bien de tous !</h2>
-    <div class="alert alert-success" role="alert" id="tips">JEzifohzeofih zeofij oezifj </div>
+    <div class="alert alert-success" role="alert">Astuce : <span id="tips"></span></span></div>
     <div class="row">
         <div class="col-lg-6">
             <form class="form" action="form.php" method="post">
@@ -71,6 +71,8 @@ $conn->close();
                 echo "0 results";
             }
             ?>
+            <button type="button" class="btn btn-default" id="plus-events" data-nb="3">Plus.. :)</button>
+
             <div class="modal fade" id="alerteModal" tabindex="-1" role="dialog" aria-labelledby="alerteModalLabel">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
@@ -97,16 +99,22 @@ $conn->close();
                             </div>
                             <div class="row">
                                 <div class="col-lg-12">
-                                    <form class="form" action="form.php" method="post">
+                                    <form class="form" action="form_sig.php" method="post">
                                         <fieldset>
                                             <legend>Lancer une signalisation !</legend>
                                             <div class="form-group">
+                                                <input type="hidden" id="id-alerte"  name="id_alerte" value="">
                                                 <label for="nom_sig">Nom Prénom</label>
                                                 <input type="text" class="form-control" id="nom_sig" name="nom_sig" placeholder="Nom Prénom de la personne concernée">
                                                 <label for="age_sig">Age</label>
                                                 <input type="text" class="form-control" id="age_sig" name="age_sig" placeholder="Age">
                                                 <label for="sexe_sig">Sexe</label>
                                                 <input type="text" class="form-control" id="sexe_sig" name="sexe_sig" placeholder="Sexe">
+                                                <select id="sexe_sig" name="sexe_sig">
+                                                    <option value="F">Femme</option>
+                                                    <option value="H">Homme</option>
+                                                    <option value="A">Autre</option>
+                                                </select>
                                                 <label for="description_sig">Description</label>
                                                 <input type="text" class="form-control" id="description_sig" name="description_sig" placeholder="Description">
                                                 <span class="input-group-btn">
