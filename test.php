@@ -76,7 +76,7 @@ $conn->close();
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                            <h4 class="modal-title" id="alerteModalLabel">New message</h4>
+                            <h3 class="modal-title" id="alerteModalLabel">New message</h3>
                         </div>
                         <div class="modal-body">
                             <div class="row">
@@ -99,7 +99,7 @@ $conn->close();
                                 <div class="col-lg-12">
                                     <form class="form" action="form.php" method="post">
                                         <fieldset>
-                                            <legend>Lancer une alerte !</legend>
+                                            <legend>Lancer une signalisation !</legend>
                                             <div class="form-group">
                                                 <label for="nom_sig">Nom Prénom</label>
                                                 <input type="text" class="form-control" id="nom_sig" name="nom_sig" placeholder="Nom Prénom de la personne concernée">
