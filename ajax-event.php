@@ -18,7 +18,7 @@ if (isset($_GET['event'])){
     while($row = $req->fetch_assoc()) {
         $result[] = $row;
     }
-    echo json_encode(mysqli_real_escape_string($con,$result));
+    echo json_encode($result);
 
 }else{
     echo $_GET['event'];
