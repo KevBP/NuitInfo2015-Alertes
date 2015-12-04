@@ -8,6 +8,10 @@
 require("library.php");
 $con = connectToDatabase();
 
+$func = function($value) {
+    return htmlentities($value);
+};
+
 if (isset($_GET['event'])){
     $local = mysqli_real_escape_string($con, htmlentities($_GET['event']));
     $sql = "SELECT titre_alerte, niveau_alerte,message_alerte FROM ALERTE ORDER BY date_soumission_alerte DESC LIMIT $local";
@@ -16,7 +20,7 @@ if (isset($_GET['event'])){
 
 
     while($row = $req->fetch_assoc()) {
-        $result[] = $row;// Array(, htmlspecialchars($row[1]), htmlspecialchars($row[2]), htmlspecialchars($row[3]));
+        $result[] = array_map($func, $row);// Array(, htmlspecialchars($row[1]), htmlspecialchars($row[2]), htmlspecialchars($row[3]));
         //$result[] = htmlspecialchars($row, ENT_QUOTES,"UTF-8");
     }
     //var_dump($result);
