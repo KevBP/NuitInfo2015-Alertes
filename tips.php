@@ -3,7 +3,7 @@
 	
 	$con = connectToDatabase();
 	
-	$sql = "SELECT message_tips
+	$sql = "SELECT phrase_tips
 			FROM TIPS
 			ORDER BY RAND() LIMIT 1";
 			
@@ -11,7 +11,6 @@
 	
 	echo $req;
 
-	echo "dsqdq";
 	
 	mysqli_close($con);
 ?>
