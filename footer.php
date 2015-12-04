@@ -37,6 +37,6 @@ Voici la liste des sponsors, elle doit toujours être visible avec leur logo (en
 
 <script type="text/javascript" src="/js/scripts.js"></script>
 <script>function showTips() { xmlhttpp.open("GET", "tips.php", true); xmlhttpp.send(); return xhttpp.responseText; }</script>
-<script>function callBackTips() { alert("Bite"); $.ajax({url: "tips.php", success: function(result){ $("#tips").html(result); setTimeout(callBackTips, 1000); alert("Zizi");}</script>
+<script>function callBackTips() { alert("Bite"); $.ajax({url: "tips.php", success: function(result){ $("#tips").html(result); alert("Zizi");}</script>
 </body>
 </html>
