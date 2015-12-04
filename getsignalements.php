@@ -9,7 +9,7 @@ $con = connectToDatabase();
 
 $sql = "SELECT *
         FROM SIGNALEMENT
-        WHERE SIGNALEMENT.id_signalement =
+        WHERE SIGNALEMENT.id_signalement IN
             (SELECT LISTE_SIGNALEMENTS.id_signalement
              FROM LISTE_SIGNALEMENTS
              WHERE id_alerte = ". $_GET['id'] .")";
