@@ -16,10 +16,12 @@ if (isset($_GET['event'])){
 
 
     while($row = $req->fetch_assoc()) {
-        $result[] = $row;
+        $result[] = htmlentities($row);
     }
     echo json_encode($result);
 
 }else{
     echo $_GET['event'];
 }
+
+phpinfo();

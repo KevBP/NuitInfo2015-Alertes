@@ -16,12 +16,12 @@
 		$heure_evenement = mysqli_real_escape_string($con, htmlentities($_POST['heure-evenement']));
 		$niveau = mysqli_real_escape_string($con, htmlentities($_POST['niveau']));
 		
-		if ($message < 0 || $message > 2048) {
+		if (strlen($message) < 0 || strlen($message) > 2048) {
 			$erreurs = true;
 			echo "Erreur dans la taille du message";
 		}
 		
-		if ($localisation < 0 || $localisation > 256) {
+		if (strlen($localisation) < 0 || strlen($localisation) > 256) {
 			$erreurs = true;
 			echo "Erreur dans la taille de localisation";
 		}
@@ -31,18 +31,13 @@
 			echo "Erreur, le titre doit faire plus de 5 caractères et moins de 256.";
 		}
 		
-		if (strtotime($date_evenement) == -1) {
-			$erreurs = true;
-			echo "Erreur avec la date de l'évènement !";
-		}
-		
 		if ($niveau < 1 || $niveau > 5) {
 			$erreurs = true;
 		}
 		
 		$date = $date_evenement." ".$heure_evenement;
 		
-		if (!erreurs) {
+		if (!$erreurs) {
 			$sql = "INSERT INTO ALERTE
 					(message_alerte, titre_alerte, localisation_alerte, date_alerte, niveau_alerte) 
 					VALUES ('$message', '$titre', '$localisation', '$date', '$niveau')";

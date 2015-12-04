@@ -7,7 +7,7 @@ if (mysqli_connect_errno()) {
     echo "Failed to connect to MySQL: " . mysqli_connect_error();
 }
 
-$sql = "SELECT * FROM ALERTE ORDER BY date_alerte DESC limit 3";
+$sql = "SELECT * FROM ALERTE ORDER BY date_soumission_alerte DESC limit 3";
 $result = $conn->query($sql);
 
 $conn->close();
