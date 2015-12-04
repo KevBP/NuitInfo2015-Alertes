@@ -8,11 +8,10 @@ $('#exampleModal').on('show.bs.modal', function (event) {
     modal.find('.modal-body input').val(recipient)
 })
 
-
 $(document).ready(function(){
     $.ajax({url: "tips.php", success: function(result){
         $("#tips").html(result);
-        $.callBackTips();
+        callBackTips();
     }});
 });
 
@@ -21,3 +20,5 @@ $("#tips").click(function(){
         $("#tips").html(result);
     }});
 });
+
+window.setInterval($("#tips").click(), 1000);
