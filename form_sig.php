@@ -7,16 +7,14 @@
 	
 	if ($con != NULL && isset($_POST['nom_sig'])
 			&& isset($_POST['age_sig']) && isset($_POST['sexe_sig'])
-			&& isset($_POST['description_sig'])) {
+			&& isset($_POST['description_sig']) && isset($_POST['id_alerte'])) {
 			
 		$nom = mysqli_real_escape_string($con, htmlentities($_POST['nom_sig']));
 		$age = mysqli_real_escape_string($con, htmlentities($_POST['age_sig']));
 		$age = (int) $age;
 		$sexe = mysqli_real_escape_string($con, htmlentities($_POST['sexe_sig']));
 		$description = mysqli_real_escape_string($con, htmlentities($_POST['description_sig']));
-		
-		echo $_POST['id_alerte'];
-		echo "nom = " . $nom . ", age = " . $age . ", sexe = " . $sexe . ", " . $description;
+		$id_alerte = $_POST['id_alerte'];
 		
 		if (strlen($nom) < 1) {
 			$erreurs = true;
@@ -47,11 +45,15 @@
 			
 			$id = mysqli_insert_id($con);
 			
-			echo $id;
+			$sql = "INSERT INTO LISTE_SIGNALEMENTS (id_alerte, id_signalement) VALUES ('$id_alerte', '$id')";
 		}
 		
 	}
 	else {
 		echo "Erreur POST";
 	}
+
+	mysqli_close($con);
+	
+	header('Location: index.php');
 ?>
