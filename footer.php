@@ -39,6 +39,6 @@ Voici la liste des sponsors, elle doit toujours être visible avec leur logo (en
 <script type="text/javascript" src="/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="/js/bootstrap-datepicker.js"></script>
 <script type="text/javascript" src="/js/scripts.js"></script>
-<script>function showTips() { xmlhttp.open("GET", "tips.php", true); xmlhttpp.send(); return xhttp.responseText; }</script>
+<script>function showTips() { xmlhttpp.open("GET", "tips.php", true); xmlhttpp.send(); return xhttpp.responseText; }</script>
 </body>
 </html>
