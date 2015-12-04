@@ -7,7 +7,7 @@ if (mysqli_connect_errno()) {
     echo "Failed to connect to MySQL: " . mysqli_connect_error();
 }
 
-$sql = "SELECT titre_alerte, niveau_alerte,message_alerte FROM ALERTE ORDER BY date_alerte DESC";
+$sql = "SELECT titre_alerte, niveau_alerte,message_alerte FROM ALERTE ORDER BY date_alerte DESC limit 3";
 $result = $conn->query($sql);
 
 $conn->close();
@@ -19,7 +19,7 @@ $conn->close();
 <?php require("header.php"); ?>
 <div class="container">
     <h2>Une anomalie, une urgence, un danger imminent ? Partagez-le pour le bien de tous !</h2>
-    <div class="alert alert-success" role="alert" id="tips">JEzifohzeofih zeofij oezifj </div>
+    <div class="alert alert-success" role="alert" id="tips">Astuce : <span id="tips"></span></span></div>
     <div class="row">
         <div class="col-lg-6">
             <form class="form" action="form.php" method="post">
