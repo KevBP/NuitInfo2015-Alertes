@@ -45,7 +45,7 @@
 			
 			$req = mysqli_query($con, $sql);
 			
-			$id = mysqli_insert_id();
+			$id = mysqli_insert_id($con);
 			
 			echo $id;
 		}
