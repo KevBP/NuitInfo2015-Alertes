@@ -54,24 +54,6 @@ $conn->close();
         </div>
         <div class="col-lg-6">
             <h3>Dernières alertes</h3>
-            <?php
-            if ($result->num_rows > 0) {
-                echo "<div class=\"list-group\">";
-                // output data of each row
-                while($row = $result->fetch_assoc()) {
-                    switch($row['niveau_alerte']){
-                        case "1" : echo "<a href='#' class=\"list-group-item\" data-toggle=\"modal\" data-target='#signalementModal'><h4 class='list-group-item-heading' data-titrealerte=\"" .$row["titre_alerte"]."\">" . $row["titre_alerte"] . "</h4><p class='list-group-item-text'>" . $row["message_alerte"] . "</p></a>"; break;
-                        case "2" : echo "<a href='#' class=\"list-group-item list-group-item-success\" data-toggle=\"modal\" data-target='#signalementModal'><h4 class='list-group-item-heading' data-titrealerte=\"" .$row["titre_alerte"]."\">" . $row["titre_alerte"] . "</h4><p class='list-group-item-text'>" . $row["message_alerte"] . "</p></a>"; break;
-                        case "3" : echo "<a href='#' class=\"list-group-item list-group-item-info\" data-toggle=\"modal\" data-target='#signalementModal'><h4 class='list-group-item-heading' data-titrealerte=\"" .$row["titre_alerte"]."\">" . $row["titre_alerte"] . "</h4><p class='list-group-item-text'>" . $row["message_alerte"] . "</p></a>"; break;
-                        case "4" : echo "<a href='#' class=\"list-group-item list-group-item-warning\" data-toggle=\"modal\" data-target='#signalementModal'><h4 class='list-group-item-heading' data-titrealerte=\"" .$row["titre_alerte"]."\">" . $row["titre_alerte"] . "</h4><p class='list-group-item-text'>" . $row["message_alerte"] . "</p></a>"; break;
-                        case "5" : echo "<a href='#' class=\"list-group-item list-group-item-danger\" data-toggle=\"modal\" data-target='#signalementModal'><h4 class='list-group-item-heading' data-titrealerte=\"" .$row["titre_alerte"]."\">" . $row["titre_alerte"] . "</h4><p class='list-group-item-text'>" . $row["message_alerte"] . "</p></a>"; break;
-                    }
-                }
-                echo "</div>";
-            } else {
-                echo "0 results";
-            }
-            ?>
             <div class="modal fade" id="signalementModal" tabindex="-1" role="dialog" aria-labelledby="signalementModalLabel">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
@@ -98,6 +80,25 @@ $conn->close();
                     </div>
                 </div>
             </div>
+            <?php
+            if ($result->num_rows > 0) {
+                echo "<div class=\"list-group\">";
+                // output data of each row
+                while($row = $result->fetch_assoc()) {
+                    switch($row['niveau_alerte']){
+                        case "1" : echo "<a href='#' class=\"list-group-item\" data-toggle=\"modal\" data-target='#signalementModal'><h4 class='list-group-item-heading' data-titrealerte=\"" .$row["titre_alerte"]."\">" . $row["titre_alerte"] . "</h4><p class='list-group-item-text'>" . $row["message_alerte"] . "</p></a>"; break;
+                        case "2" : echo "<a href='#' class=\"list-group-item list-group-item-success\" data-toggle=\"modal\" data-target='#signalementModal'><h4 class='list-group-item-heading' data-titrealerte=\"" .$row["titre_alerte"]."\">" . $row["titre_alerte"] . "</h4><p class='list-group-item-text'>" . $row["message_alerte"] . "</p></a>"; break;
+                        case "3" : echo "<a href='#' class=\"list-group-item list-group-item-info\" data-toggle=\"modal\" data-target='#signalementModal'><h4 class='list-group-item-heading' data-titrealerte=\"" .$row["titre_alerte"]."\">" . $row["titre_alerte"] . "</h4><p class='list-group-item-text'>" . $row["message_alerte"] . "</p></a>"; break;
+                        case "4" : echo "<a href='#' class=\"list-group-item list-group-item-warning\" data-toggle=\"modal\" data-target='#signalementModal'><h4 class='list-group-item-heading' data-titrealerte=\"" .$row["titre_alerte"]."\">" . $row["titre_alerte"] . "</h4><p class='list-group-item-text'>" . $row["message_alerte"] . "</p></a>"; break;
+                        case "5" : echo "<a href='#' class=\"list-group-item list-group-item-danger\" data-toggle=\"modal\" data-target='#signalementModal'><h4 class='list-group-item-heading' data-titrealerte=\"" .$row["titre_alerte"]."\">" . $row["titre_alerte"] . "</h4><p class='list-group-item-text'>" . $row["message_alerte"] . "</p></a>"; break;
+                    }
+                }
+                echo "</div>";
+            } else {
+                echo "0 results";
+            }
+            ?>
+
         </div>
     </div>
     <?php require("footer.php"); ?>
