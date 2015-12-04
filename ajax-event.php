@@ -18,7 +18,9 @@ if (isset($_GET['event'])){
     while($row = $req->fetch_assoc()) {
         $result[] = $row;
     }
-    echo json_encode($result);
+
+    $name = htmlentities(str_replace("'", "\'", $result));
+    echo json_encode($name);
 
 }else{
     echo $_GET['event'];
