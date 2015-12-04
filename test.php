@@ -79,10 +79,20 @@ $conn->close();
                             <h4 class="modal-title" id="alerteModalLabel">New message</h4>
                         </div>
                         <div class="modal-body">
-                            <p id="date-alerte"></p>
-                            <p id="localisation-alerte"></p>
-                            <p id="niveau-alerte"></p>
-                            <p id="message-alerte"></p>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <p id="date-alerte"></p>
+                                </div>
+                                <div class="col-md-4">
+                                    <p id="localisation-alerte"></p>
+                                </div>
+                                <div class="col-md-4">
+                                    <p id="niveau-alerte"></p>
+                                </div>
+                                <div class="col-lg-12">
+                                    <p id="message-alerte"></p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
