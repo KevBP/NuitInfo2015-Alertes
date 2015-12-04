@@ -19,8 +19,7 @@ if (isset($_GET['event'])){
         $result[] = $row;
     }
 
-    $name = htmlentities(str_replace("'", "\'", $result));
-    echo json_encode($name);
+    echo json_encode($result);
 
 }else{
     echo $_GET['event'];
