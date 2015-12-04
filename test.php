@@ -109,7 +109,6 @@ $conn->close();
                                                 <label for="age_sig">Age</label>
                                                 <input type="text" class="form-control" id="age_sig" name="age_sig" placeholder="Age">
                                                 <label for="sexe_sig">Sexe</label>
-                                                <input type="text" class="form-control" id="sexe_sig" name="sexe_sig" placeholder="Sexe">
                                                 <select id="sexe_sig" name="sexe_sig">
                                                     <option value="F">Femme</option>
                                                     <option value="H">Homme</option>
