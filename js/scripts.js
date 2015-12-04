@@ -11,7 +11,7 @@ $('#signalementModal').on('show.bs.modal', function (event) {
 
 
 $("#tips").onload(function(){
+	alert("Bite");
 	var tips = showTips();
 	$("#tips").innerHTML = tips;
-	alert(showTips());
 });
