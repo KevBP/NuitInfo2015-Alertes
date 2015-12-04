@@ -13,6 +13,16 @@ $('#alerteModal').on('show.bs.modal', function (event) {
     modal.find('#localisation-alerte').text('Localisation : ' + localisation);
     modal.find('#niveau-alerte').text('Niveau : ' + niveau);
     modal.find('#id-alerte').attr("value", idalerte);
+
+    $.ajax({url: "getsignalements.php?id="+idalerte, success: function(result){
+        var data = JSON && JSON.parse(result) || $.parseJSON(result);
+        var res = "<div class=\"row\">";
+        for (i = 0; i < data.length; i++) {
+            res +="<div class=\"col-lg-3\">Nom : data[i].nom_prenom_signalement</div><div class=\"col-lg-3\">Age : data[i].age_signalement</div><div class=\"col-lg-3\">Sexe : data[i].sexe_signalement</div><div class=\"col-lg-3\">Nom : data[i].description_signalement</div>"
+        }
+
+        $("#toutcon").html(res);
+    }});
 });
 
 $(document).ready(function(){
