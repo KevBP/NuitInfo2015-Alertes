@@ -59,7 +59,7 @@ $conn->close();
                 echo "<div class=\"list-group\">";
                 while($row = $result->fetch_assoc()) {
                     switch($row['niveau_alerte']){
-                        case "1" : echo '<a href="#" type="button" class="list-group-item" data-toggle="modal" data-target="#alerteModal" data-titrealerte="'.$row["titre_alerte"].'" data-messagealerte="'.$row["message_alerte"].'" data-datealerte="'.$row["date_alerte"].' data-localisationalerte="'.$row["localisation_alerte"].'" data-niveaualerte="'.$row["niveau_alerte"].'"><h4 class="list-group-item-heading">'. $row["titre_alerte"] .'</h4><p class="list-group-item-text">' . $row["message_alerte"] . '</p></a>'; break;
+                        case "1" : echo '<a href="#" type="button" class="list-group-item" data-toggle="modal" data-target="#alerteModal" data-titrealerte="'.$row["titre_alerte"].'" data-messagealerte="'.$row["message_alerte"].'" data-datealerte="'.$row["date_alerte"].'" data-localisationalerte="'.$row["localisation_alerte"].'" data-niveaualerte="'.$row["niveau_alerte"].'"><h4 class="list-group-item-heading">'. $row["titre_alerte"] .'</h4><p class="list-group-item-text">' . $row["message_alerte"] . '</p></a>'; break;
                         case "2" : echo '<a href="#" type="button" class="list-group-item list-group-item-success" data-toggle="modal" data-target="#alerteModal" data-titrealerte="'.$row["titre_alerte"].'" data-messagealerte="'.$row["message_alerte"].'" data-datealerte="'.$row["date_alerte"].'" data-localisationalerte="'.$row["localisation_alerte"].'" data-niveaualerte="'.$row["niveau_alerte"].'"><h4 class="list-group-item-heading">'. $row["titre_alerte"] .'</h4><p class="list-group-item-text">' . $row["message_alerte"] . '</p></a>'; break;
                         case "3" : echo '<a href="#" type="button" class="list-group-item list-group-item-info" data-toggle="modal" data-target="#alerteModal" data-titrealerte="'.$row["titre_alerte"].'" data-messagealerte="'.$row["message_alerte"].'" data-datealerte="'.$row["date_alerte"].'" data-localisationalerte="'.$row["localisation_alerte"].'" data-niveaualerte="'.$row["niveau_alerte"].'"><h4 class="list-group-item-heading">'. $row["titre_alerte"] .'</h4><p class="list-group-item-text">' . $row["message_alerte"] . '</p></a>'; break;
                         case "4" : echo '<a href="#" type="button" class="list-group-item list-group-item-warning" data-toggle="modal" data-target="#alerteModal" data-titrealerte="'.$row["titre_alerte"].'" data-messagealerte="'.$row["message_alerte"].'" data-datealerte="'.$row["date_alerte"].'" data-localisationalerte="'.$row["localisation_alerte"].'" data-niveaualerte="'.$row["niveau_alerte"].'"><h4 class="list-group-item-heading" >'. $row["titre_alerte"] .'</h4><p class="list-group-item-text">' . $row["message_alerte"] . '</p></a>'; break;
@@ -89,8 +89,32 @@ $conn->close();
                                 <div class="col-md-4">
                                     <p id="niveau-alerte"></p>
                                 </div>
+                            </div>
+                            <div class="row">
                                 <div class="col-lg-12">
                                     <p id="message-alerte"></p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <form class="form" action="form.php" method="post">
+                                        <fieldset>
+                                            <legend>Lancer une alerte !</legend>
+                                            <div class="form-group">
+                                                <label for="nom_sig">Nom Prénom</label>
+                                                <input type="text" class="form-control" id="nom_sig" name="nom_sig" placeholder="Nom Prénom de la personne concernée">
+                                                <label for="age_sig">Age</label>
+                                                <input type="text" class="form-control" id="age_sig" name="age_sig" placeholder="Age">
+                                                <label for="sexe_sig">Sexe</label>
+                                                <input type="text" class="form-control" id="message" name="message" placeholder="Sexe">
+                                                <label for="description_sig">Description</label>
+                                                <input type="text" class="form-control" id="message" name="message" placeholder="Description">
+                                                <span class="input-group-btn">
+                                                    <button type="submit" class="btn btn-default">Envoyer signalement !</button>
+                                                </span>
+                                            </div>
+                                        </fieldset>
+                                    </form>
                                 </div>
                             </div>
                         </div>
