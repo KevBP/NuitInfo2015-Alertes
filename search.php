@@ -7,11 +7,12 @@ if (mysqli_connect_errno()) {
     echo "Failed to connect to MySQL: " . mysqli_connect_error();
 }
 
-$sql = "SELECT * FROM ALERTE ORDER BY date_soumission_alerte DESC limit 3";
-$result = $conn->query($sql);
+if (isset($_GET["search"])){
+    $sql = "SELECT * FROM ALERTE WHERE titre_alerte LIKE %" . mysqli_real_escape_string($con, htmlentities($_GET['search'])) . "%";
+    $result = $conn->query($sql);
 
-$conn->close();
-
+    $conn->close();
+}
 
 
 ?>
@@ -19,7 +20,7 @@ $conn->close();
 <?php require("header.php"); ?>
 <div class="container">
     <h2>Une anomalie, une urgence, un danger imminent ? Partagez-le pour le bien de tous !</h2>
-    <form class="form" action="search.php" method="get">
+    <form class="form" action="index.php" method="get">
         <div class="input-group">
             <input type="text" name="search" class="form-control" placeholder="Search for...">
               <span class="input-group-btn">
@@ -32,7 +33,7 @@ $conn->close();
         <div class="col-lg-6">
             <form class="form" action="form.php" method="post">
                 <fieldset>
-                <legend>Lancer une alerte !</legend>
+                    <legend>Lancer une alerte !</legend>
                     <div class="form-group">
                         <label for="titre">Titre</label>
                         <input type="text" class="form-control" id="titre" name="titre" placeholder="Titre">
@@ -63,21 +64,21 @@ $conn->close();
         <div class="col-lg-6">
             <h3>Dernières alertes</h3>
             <?php
-                if ($result->num_rows > 0) {
-                    echo "<div class=\"list-group\">";
-                    while($row = $result->fetch_assoc()) {
-                        switch($row['niveau_alerte']){
-                            case "1" : echo '<a href="#" type="button" class="list-group-item" data-toggle="modal" data-target="#alerteModal" data-titrealerte="'.$row["titre_alerte"].'" data-messagealerte="'.$row["message_alerte"].'" data-datealerte="'.$row["date_alerte"].'" data-localisationalerte="'.$row["localisation_alerte"].'" data-niveaualerte="'.$row["niveau_alerte"].'"><h4 class="list-group-item-heading">'. $row["titre_alerte"] .'</h4><p class="list-group-item-text">' . $row["message_alerte"] . '</p></a>'; break;
-                            case "2" : echo '<a href="#" type="button" class="list-group-item list-group-item-success" data-toggle="modal" data-target="#alerteModal" data-titrealerte="'.$row["titre_alerte"].'" data-messagealerte="'.$row["message_alerte"].'" data-datealerte="'.$row["date_alerte"].'" data-localisationalerte="'.$row["localisation_alerte"].'" data-niveaualerte="'.$row["niveau_alerte"].'"><h4 class="list-group-item-heading">'. $row["titre_alerte"] .'</h4><p class="list-group-item-text">' . $row["message_alerte"] . '</p></a>'; break;
-                            case "3" : echo '<a href="#" type="button" class="list-group-item list-group-item-info" data-toggle="modal" data-target="#alerteModal" data-titrealerte="'.$row["titre_alerte"].'" data-messagealerte="'.$row["message_alerte"].'" data-datealerte="'.$row["date_alerte"].'" data-localisationalerte="'.$row["localisation_alerte"].'" data-niveaualerte="'.$row["niveau_alerte"].'"><h4 class="list-group-item-heading">'. $row["titre_alerte"] .'</h4><p class="list-group-item-text">' . $row["message_alerte"] . '</p></a>'; break;
-                            case "4" : echo '<a href="#" type="button" class="list-group-item list-group-item-warning" data-toggle="modal" data-target="#alerteModal" data-titrealerte="'.$row["titre_alerte"].'" data-messagealerte="'.$row["message_alerte"].'" data-datealerte="'.$row["date_alerte"].'" data-localisationalerte="'.$row["localisation_alerte"].'" data-niveaualerte="'.$row["niveau_alerte"].'"><h4 class="list-group-item-heading" >'. $row["titre_alerte"] .'</h4><p class="list-group-item-text">' . $row["message_alerte"] . '</p></a>'; break;
-                            case "5" : echo '<a href="#" type="button" class="list-group-item list-group-item-danger" data-toggle="modal" data-target="#alerteModal" data-titrealerte="'.$row["titre_alerte"].'" data-messagealerte="'.$row["message_alerte"].'" data-datealerte="'.$row["date_alerte"].'" data-localisationalerte="'.$row["localisation_alerte"].'" data-niveaualerte="'.$row["niveau_alerte"].'"><h4 class="list-group-item-heading" >'. $row["titre_alerte"] .'</h4><p class="list-group-item-text">' . $row["message_alerte"] . '</p></a>'; break;
-                        }
+            if ($result->num_rows > 0) {
+                echo "<div class=\"list-group\">";
+                while($row = $result->fetch_assoc()) {
+                    switch($row['niveau_alerte']){
+                        case "1" : echo '<a href="#" type="button" class="list-group-item" data-toggle="modal" data-target="#alerteModal" data-titrealerte="'.$row["titre_alerte"].'" data-messagealerte="'.$row["message_alerte"].'" data-datealerte="'.$row["date_alerte"].'" data-localisationalerte="'.$row["localisation_alerte"].'" data-niveaualerte="'.$row["niveau_alerte"].'"><h4 class="list-group-item-heading">'. $row["titre_alerte"] .'</h4><p class="list-group-item-text">' . $row["message_alerte"] . '</p></a>'; break;
+                        case "2" : echo '<a href="#" type="button" class="list-group-item list-group-item-success" data-toggle="modal" data-target="#alerteModal" data-titrealerte="'.$row["titre_alerte"].'" data-messagealerte="'.$row["message_alerte"].'" data-datealerte="'.$row["date_alerte"].'" data-localisationalerte="'.$row["localisation_alerte"].'" data-niveaualerte="'.$row["niveau_alerte"].'"><h4 class="list-group-item-heading">'. $row["titre_alerte"] .'</h4><p class="list-group-item-text">' . $row["message_alerte"] . '</p></a>'; break;
+                        case "3" : echo '<a href="#" type="button" class="list-group-item list-group-item-info" data-toggle="modal" data-target="#alerteModal" data-titrealerte="'.$row["titre_alerte"].'" data-messagealerte="'.$row["message_alerte"].'" data-datealerte="'.$row["date_alerte"].'" data-localisationalerte="'.$row["localisation_alerte"].'" data-niveaualerte="'.$row["niveau_alerte"].'"><h4 class="list-group-item-heading">'. $row["titre_alerte"] .'</h4><p class="list-group-item-text">' . $row["message_alerte"] . '</p></a>'; break;
+                        case "4" : echo '<a href="#" type="button" class="list-group-item list-group-item-warning" data-toggle="modal" data-target="#alerteModal" data-titrealerte="'.$row["titre_alerte"].'" data-messagealerte="'.$row["message_alerte"].'" data-datealerte="'.$row["date_alerte"].'" data-localisationalerte="'.$row["localisation_alerte"].'" data-niveaualerte="'.$row["niveau_alerte"].'"><h4 class="list-group-item-heading" >'. $row["titre_alerte"] .'</h4><p class="list-group-item-text">' . $row["message_alerte"] . '</p></a>'; break;
+                        case "5" : echo '<a href="#" type="button" class="list-group-item list-group-item-danger" data-toggle="modal" data-target="#alerteModal" data-titrealerte="'.$row["titre_alerte"].'" data-messagealerte="'.$row["message_alerte"].'" data-datealerte="'.$row["date_alerte"].'" data-localisationalerte="'.$row["localisation_alerte"].'" data-niveaualerte="'.$row["niveau_alerte"].'"><h4 class="list-group-item-heading" >'. $row["titre_alerte"] .'</h4><p class="list-group-item-text">' . $row["message_alerte"] . '</p></a>'; break;
                     }
-                    echo "</div>";
-                } else {
-                    echo "0 results";
                 }
+                echo "</div>";
+            } else {
+                echo "0 results";
+            }
             ?>
             <button type="button" class="btn btn-default" id="plus-events" data-nb="3">Plus.. :)</button>
 
