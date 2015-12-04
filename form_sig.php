@@ -14,13 +14,14 @@
 		$age = (int) $age;
 		$sexe = mysqli_real_escape_string($con, htmlentities($_POST['sexe_sig']));
 		$description = mysqli_real_escape_string($con, htmlentities($_POST['description_sig']));
-		echo isset($_POST['id-alerte']);
-		//echo "nom = " . $nom . ", age = " . $age . ", sexe = " . $sexe . ", " . $description;
+		
+		echo $_POST['id_alerte'];
+		echo "nom = " . $nom . ", age = " . $age . ", sexe = " . $sexe . ", " . $description;
+		
 		if (strlen($nom) < 1) {
 			$erreurs = true;
 			echo "Erreur nom";
 		}
-		
 		
 		if (!is_int($age) || $age < 0 || $age > 110) {
 			$erreurs = true;
@@ -41,6 +42,12 @@
 			$sql = "INSERT INTO SIGNALEMENT
 					(nom_prenom_signalement, age_signalement, sexe_signalement, description_signalement)
 					VALUES ('$nom', '$age', '$sexe', '$description')";
+			
+			$req = mysqli_query($con, $sql);
+			
+			$id = mysql_insert_id();
+			
+			echo $id;
 		}
 		
 	}

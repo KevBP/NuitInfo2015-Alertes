@@ -9,9 +9,9 @@ if (mysqli_connect_errno()) {
 
 if (isset($_GET["search"])){
     $sql = "SELECT * FROM ALERTE WHERE titre_alerte LIKE %'" . mysqli_real_escape_string($con, $_GET['search']) . "'%";
-    $result = $conn->query($sql);
+    $result = $con->query($sql);
 
-    $conn->close();
+    $con->close();
 }
 
 
