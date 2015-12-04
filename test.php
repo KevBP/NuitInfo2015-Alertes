@@ -106,9 +106,9 @@ $conn->close();
                                                 <label for="age_sig">Age</label>
                                                 <input type="text" class="form-control" id="age_sig" name="age_sig" placeholder="Age">
                                                 <label for="sexe_sig">Sexe</label>
-                                                <input type="text" class="form-control" id="message" name="message" placeholder="Sexe">
+                                                <input type="text" class="form-control" id="sexe_sig" name="sexe_sig" placeholder="Sexe">
                                                 <label for="description_sig">Description</label>
-                                                <input type="text" class="form-control" id="message" name="message" placeholder="Description">
+                                                <input type="text" class="form-control" id="description_sig" name="description_sig" placeholder="Description">
                                                 <span class="input-group-btn">
                                                     <button type="submit" class="btn btn-default">Envoyer signalement !</button>
                                                 </span>
