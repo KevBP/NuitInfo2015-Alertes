@@ -15,3 +15,9 @@ $(document).ready(function(){
 	var tips = showTips();
 	$("#tips").innerHTML = tips;
 });
+
+$("#tips").click(function(){
+    $.ajax({url: "tips.php", success: function(result){
+        $("#tips").html(result);
+    }});
+});
