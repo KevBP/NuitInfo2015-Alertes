@@ -19,7 +19,7 @@ $conn->close();
 <?php require("header.php"); ?>
 <div class="container">
     <h2>Une anomalie, une urgence, un danger imminent ? Partagez-le pour le bien de tous !</h2>
-    <div class="alert alert-success" role="alert" id="tips">Astuce : <span id="tips"></span></span></div>
+    <div class="alert alert-success" role="alert">Astuce : <span id="tips"></span></span></div>
     <div class="row">
         <div class="col-lg-6">
             <form class="form" action="form.php" method="post">
