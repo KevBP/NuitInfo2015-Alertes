@@ -23,3 +23,5 @@ if (isset($_GET['event'])){
 }else{
     echo $_GET['event'];
 }
+
+phpinfo();
