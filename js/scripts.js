@@ -7,22 +7,23 @@ $('#exampleModal').on('show.bs.modal', function (event) {
     modal.find('.modal-title').text('New message to ' + recipient)
     modal.find('.modal-body input').val(recipient)
 })
-/*
-function callBackTips()
-{ alert("Bite"); $.ajax({url: "tips.php", success: function(result){ $("#tips").html(result); setTimeOut(callBackTips(), 1000); alert("Zizi");
-}*/
 
 $(document).ready(function(){
     $.ajax({url: "tips.php", success: function(result){
         $("#tips").html(result);
-        //callBackTips();
     }});
 });
-
-$("#tips").click(function(){
+/*
+$("#tips").click(function(){*/
+window.setInterval(function() {
     $.ajax({url: "tips.php", success: function(result){
         $("#tips").html(result);
     }});
-});
+}, 20000);
 
-window.setInterval(function(){$("#tips").click()}, 1000);
+/*
+})
+window.setInterval(function(){$.ajax({url: "tips.php", success: function(result){
+    $("#tips").html(result);
+}});}, 20000);
+*/
