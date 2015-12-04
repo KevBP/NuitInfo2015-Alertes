@@ -13,17 +13,9 @@ $(document).ready(function(){
         $("#tips").html(result);
     }});
 });
-/*
-$("#tips").click(function(){*/
+
 window.setInterval(function() {
     $.ajax({url: "tips.php", success: function(result){
         $("#tips").html(result);
     }});
 }, 20000);
-
-/*
-})
-window.setInterval(function(){$.ajax({url: "tips.php", success: function(result){
-    $("#tips").html(result);
-}});}, 20000);
-*/
