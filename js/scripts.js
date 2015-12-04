@@ -3,10 +3,12 @@ $('#alerteModal').on('show.bs.modal', function (event) {
     var titre = button.data('titrealerte');
     var message = button.data('messagealerte');
     var dalerte = button.data('datealerte');
+    var localisation = button.data('localisationalerte');
     var modal = $(this);
     modal.find('.modal-title').text('Alerte ' + titre);
     modal.find('#message-alerte').text(message);
     modal.find('#date-alerte').text(dalerte);
+    modal.find('#localisation-alerte').text(localisation);
     alert(dalerte);
 });
 
