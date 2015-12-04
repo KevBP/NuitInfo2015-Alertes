@@ -10,7 +10,7 @@
 	$req = mysqli_query($con, $sql);
 	$result=$req->fetch_assoc();
 	
-	echo $result[0];
+	echo rand(5, 15);
 
 	
 	mysqli_close($con);
