@@ -14,7 +14,7 @@
 		$sexe = mysqli_real_escape_string($con, htmlentities($_POST['sexe_sig']));
 		$description = mysqli_real_escape_string($con, htmlentities($_POST['description_sig']));
 		
-		echo "nom = " . $nom;
+		echo "nom = " . $nom . ", age = " . $age . ", sexe = " . $sexe . ", " . $description;
 	}
 	else {
 		echo "Erreur POST";
