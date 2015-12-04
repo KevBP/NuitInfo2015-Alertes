@@ -3,4 +3,5 @@
 }
  body {
    background-image : url("images/blue_sky.jpg");
+   opacity: 0.4;
  }
