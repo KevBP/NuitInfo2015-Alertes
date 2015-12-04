@@ -23,7 +23,7 @@ window.setInterval(function() {
 }, 10000);
 
 $("#plus-events").click(function(){
-    $.ajax({url: "ajax-event.php?" + $("#plus-events").attr("data-nb"), success: function(result){
+    $.ajax({url: "ajax-event.php?" + $("#plus-events").attr("data-nb") +1, success: function(result){
         var data = $.parseJSON(result);
         var res = "";
         for (i = 0; i < data.length; i++) {
@@ -32,5 +32,5 @@ $("#plus-events").click(function(){
         $("#list-group").html(result);
     }});
 
-    $("#plus-events").attr("data-nb", $("#plus-events").attr("data-nb") + 5);
+    $("#plus-events").attr("data-nb", $("#plus-events").attr("data-nb") + 1);
 });
