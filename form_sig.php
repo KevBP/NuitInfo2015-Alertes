@@ -46,6 +46,8 @@
 			$id = mysqli_insert_id($con);
 			
 			$sql = "INSERT INTO LISTE_SIGNALEMENTS (id_alerte, id_signalement) VALUES ('$id_alerte', '$id')";
+			
+			$req = mysqli_query($con, $sql);
 		}
 		
 	}
