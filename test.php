@@ -57,7 +57,6 @@ $conn->close();
             <?php
             if ($result->num_rows > 0) {
                 echo "<div class=\"list-group\">";
-                // output data of each row
                 while($row = $result->fetch_assoc()) {
                     switch($row['niveau_alerte']){
                         case "1" : echo '<a href="#" type="button" class="list-group-item" data-toggle="modal" data-target="#alerteModal" data-titrealerte="'.$row["titre_alerte"].'" data-messagealerte="'.$row["message_alerte"].'"><h4 class="list-group-item-heading">'. $row["titre_alerte"] .'</h4><p class="list-group-item-text">' . $row["message_alerte"] . '</p></a>'; break;
