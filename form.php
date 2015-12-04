@@ -16,6 +16,16 @@
 		$heure_evenement = mysqli_real_escape_string($con, htmlentities($_POST['heure-evenement']));
 		$niveau = mysqli_real_escape_string($con, htmlentities($_POST['niveau']));
 		
+		if ($message > 0 || $message < 2048) {
+			$erreurs = true;
+			echo "Erreur dans la taille du message";
+		}
+		
+		if ($localisation > 0 || $localisation < 256) {
+			$erreurs = true;
+			echo "Erreur dans la taille de localisation";
+		}
+		
 		if (strlen($titre) < 5 || strlen($titre) > 256) {
 			$erreurs = true;
 			echo "Erreur, le titre doit faire plus de 5 caractères et moins de 256.";
