@@ -5,10 +5,10 @@ $con = connectToDatabase();
 
 $sql = "SELECT *
         FROM SIGNALEMENT
-        WHERE SIGNALEMENT.id_signalement = '". $_GET['id'] ."'
+        WHERE SIGNALEMENT.id_signalement = ". $_GET['id'] ."
             (SELECT LISTE_SIGNALEMENTS.id_signalement
              FROM LISTE_SIGNALEMENTS
-             WHERE id_alerte = '". $_GET['id'] ."')";
+             WHERE id_alerte = ". $_GET['id'] .")";
 
 echo $sql;
 $req = mysqli_query($con, $sql);
