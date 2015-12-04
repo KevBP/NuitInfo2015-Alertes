@@ -13,7 +13,6 @@ $('#alerteModal').on('show.bs.modal', function (event) {
     modal.find('#localisation-alerte').text('Localisation : ' + localisation);
     modal.find('#niveau-alerte').text('Niveau : ' + niveau);
     modal.find('#id-alerte').attr("value", idalerte);
-    alert(idalerte);
 });
 
 $(document).ready(function(){
