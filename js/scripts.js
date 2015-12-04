@@ -23,7 +23,7 @@ window.setInterval(function() {
 }, 10000);
 
 $("#plus-events").click(function(){
-    $.ajax({url: "ajax-event.php?" + $("#plus-events").attr("data-nb") +1, success: function(result){
+    $.ajax({url: "ajax-event.php?event=" + $("#plus-events").attr("data-nb") +1, success: function(result){
         alert(result);
         var data = JSON && JSON.parse(result) || $.parseJSON(result);
         var res = "";
