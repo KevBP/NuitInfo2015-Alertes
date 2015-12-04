@@ -59,24 +59,19 @@ $conn->close();
                 echo "<div class=\"list-group\">";
                 // output data of each row
                 while($row = $result->fetch_assoc()) {
-                    echo '<a href="#" type="button" class="list-group-item" data-toggle="modal" data-target="#exampleModal" data-whatever="'.$row["titre_alerte"].'"><h4 class="list-group-item-heading" data-whatever="'.$row["titre_alerte"].'">'. $row["titre_alerte"] .'</h4><p class="list-group-item-text">' . $row["message_alerte"] . '</p></a>';
-/*                    switch($row['niveau_alerte']){
-                        case "1" : echo "<button class=\"list-group-item\" data-toggle=\"modal\" data-target=\"#exampleModal\"><h4 class='list-group-item-heading' data-whatever=\"" .$row["titre_alerte"]."\">" . $row["titre_alerte"] . "</h4><p class='list-group-item-text'>" . $row["message_alerte"] . "</p></button>"; break;
-                        case "2" : echo "<button class=\"list-group-item list-group-item-success\" data-toggle=\"modal\" data-target=\"#exampleModal\"><h4 class='list-group-item-heading' data-whatever=\"" .$row["titre_alerte"]."\">" . $row["titre_alerte"] . "</h4><p class='list-group-item-text'>" . $row["message_alerte"] . "</p></button>"; break;
-                        case "3" : echo "<button class=\"list-group-item list-group-item-info\" data-toggle=\"modal\" data-target=\"#exampleModal\"><h4 class='list-group-item-heading' data-whatever=\"" .$row["titre_alerte"]."\">" . $row["titre_alerte"] . "</h4><p class='list-group-item-text'>" . $row["message_alerte"] . "</p></button>"; break;
-                        case "4" : echo "<button class=\"list-group-item list-group-item-warning\" data-toggle=\"modal\" data-target=\"#exampleModal\"><h4 class='list-group-item-heading' data-whatever=\"" .$row["titre_alerte"]."\">" . $row["titre_alerte"] . "</h4><p class='list-group-item-text'>" . $row["message_alerte"] . "</p></button>"; break;
-                        case "5" : echo "<button class=\"list-group-item list-group-item-danger\" data-toggle=\"modal\" data-target=\"#exampleModal\"><h4 class='list-group-item-heading' data-whatever=\"" .$row["titre_alerte"]."\">" . $row["titre_alerte"] . "</h4><p class='list-group-item-text'>" . $row["message_alerte"] . "</p></button>"; break;
-                    }*/
+                    switch($row['niveau_alerte']){
+                        case "1" : echo '<a href="#" type="button" class="list-group-item" data-toggle="modal" data-target="#exampleModal" data-whatever="'.$row["titre_alerte"].'"><h4 class="list-group-item-heading" data-whatever="'.$row["titre_alerte"].'">'. $row["titre_alerte"] .'</h4><p class="list-group-item-text">' . $row["message_alerte"] . '</p></a>'; break;
+                        case "2" : echo '<a href="#" type="button" class="list-group-item list-group-item-success" data-toggle="modal" data-target="#exampleModal" data-whatever="'.$row["titre_alerte"].'"><h4 class="list-group-item-heading" data-whatever="'.$row["titre_alerte"].'">'. $row["titre_alerte"] .'</h4><p class="list-group-item-text">' . $row["message_alerte"] . '</p></a>'; break;
+                        case "3" : echo '<a href="#" type="button" class="list-group-item list-group-item-info" data-toggle="modal" data-target="#exampleModal" data-whatever="'.$row["titre_alerte"].'"><h4 class="list-group-item-heading" data-whatever="'.$row["titre_alerte"].'">'. $row["titre_alerte"] .'</h4><p class="list-group-item-text">' . $row["message_alerte"] . '</p></a>'; break;
+                        case "4" : echo '<a href="#" type="button" class="list-group-item list-group-item-warning" data-toggle="modal" data-target="#exampleModal" data-whatever="'.$row["titre_alerte"].'"><h4 class="list-group-item-heading" data-whatever="'.$row["titre_alerte"].'">'. $row["titre_alerte"] .'</h4><p class="list-group-item-text">' . $row["message_alerte"] . '</p></a>'; break;
+                        case "5" : echo '<a href="#" type="button" class="list-group-item list-group-item-danger" data-toggle="modal" data-target="#exampleModal" data-whatever="'.$row["titre_alerte"].'"><h4 class="list-group-item-heading" data-whatever="'.$row["titre_alerte"].'">'. $row["titre_alerte"] .'</h4><p class="list-group-item-text">' . $row["message_alerte"] . '</p></a>'; break;
+                    }
                 }
                 echo "</div>";
             } else {
                 echo "0 results";
             }
             ?>
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Open modal for @mdo</button>
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@fat">Open modal for @fat</button>
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="FUCK">Open modal for @getbootstrap</button>
-
             <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
