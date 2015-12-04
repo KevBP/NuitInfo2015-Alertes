@@ -37,7 +37,7 @@
 		
 		$date = $date_evenement." ".$heure_evenement;
 		
-		if (!erreurs) {
+		if (!$erreurs) {
 			$sql = "INSERT INTO ALERTE
 					(message_alerte, titre_alerte, localisation_alerte, date_alerte, niveau_alerte) 
 					VALUES ('$message', '$titre', '$localisation', '$date', '$niveau')";
