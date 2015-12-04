@@ -15,8 +15,8 @@ if (isset($_GET['event'])){
     $req = mysqli_query($con, $sql);
 
 
-    while($row = $req->fetch_row()) {
-        $result[] = htmlspecialchars($row[0]);// Array(, htmlspecialchars($row[1]), htmlspecialchars($row[2]), htmlspecialchars($row[3]));
+    while($row = $req->fetch_assoc()) {
+        $result[] = htmlspecialchars($row);// Array(, htmlspecialchars($row[1]), htmlspecialchars($row[2]), htmlspecialchars($row[3]));
         //$result[] = htmlspecialchars($row, ENT_QUOTES,"UTF-8");
     }
     //var_dump($result);
