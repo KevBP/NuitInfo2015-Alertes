@@ -32,5 +32,5 @@ $("plus-events").click(function(){
         $("#list-group").html(result);
     }});
 
-    $(".list-group").val();
+    $("plus-events").attr("data-nb", $("plus-events").attr("data-nb") + 5);
 });
