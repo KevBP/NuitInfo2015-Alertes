@@ -14,7 +14,7 @@ $func = function($value) {
 
 if (isset($_GET['event'])){
     $local = mysqli_real_escape_string($con, htmlentities($_GET['event']));
-    $sql = "SELECT titre_alerte, niveau_alerte,message_alerte FROM ALERTE ORDER BY date_soumission_alerte DESC LIMIT $local";
+    $sql = "SELECT * FROM ALERTE ORDER BY date_soumission_alerte DESC LIMIT $local";
 
     $req = mysqli_query($con, $sql);
 
