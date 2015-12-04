@@ -16,7 +16,7 @@ if (isset($_GET['event'])){
 
 
     while($row = $req->fetch_assoc()) {
-        $result[] = htmlentities($row);
+        $result[] = htmlspecialchars($row, ENT_QUOTES,"UTF-8");
     }
     echo json_encode($result);
 
