@@ -16,7 +16,7 @@ if (isset($_GET['event'])){
 
 
     while($row = $req->fetch_assoc()) {
-        $result[] = htmlspecialchars($row);// Array(, htmlspecialchars($row[1]), htmlspecialchars($row[2]), htmlspecialchars($row[3]));
+        $result[] = $row;// Array(, htmlspecialchars($row[1]), htmlspecialchars($row[2]), htmlspecialchars($row[3]));
         //$result[] = htmlspecialchars($row, ENT_QUOTES,"UTF-8");
     }
     //var_dump($result);
