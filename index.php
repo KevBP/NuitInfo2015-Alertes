@@ -59,11 +59,11 @@ $conn->close();
                     // output data of each row
                     while($row = $result->fetch_assoc()) {
                         switch($row['niveau_alerte']){
-                            case "1" : echo "<a href='#' class=\"list-group-item\"><h4 class='list-group-item-heading'>" . $row["titre_alerte"] . "</h4><p class='list-group-item-text'>" . $row["message_alerte"] . "</p></a>"; break;
-                            case "2" : echo "<a href='#' class=\"list-group-item list-group-item-success\"><h4 class='list-group-item-heading'>" . $row["titre_alerte"] . "</h4><p class='list-group-item-text'>" . $row["message_alerte"] . "</p></a>"; break;
-                            case "3" : echo "<a href='#' class=\"list-group-item list-group-item-info\"><h4 class='list-group-item-heading'>" . $row["titre_alerte"] . "</h4><p class='list-group-item-text'>" . $row["message_alerte"] . "</p></a>"; break;
-                            case "4" : echo "<a href='#' class=\"list-group-item list-group-item-warning\"><h4 class='list-group-item-heading'>" . $row["titre_alerte"] . "</h4><p class='list-group-item-text'>" . $row["message_alerte"] . "</p></a>"; break;
-                            case "5" : echo "<a href='#' class=\"list-group-item list-group-item-danger\"><h4 class='list-group-item-heading'>" . $row["titre_alerte"] . "</h4><p class='list-group-item-text'>" . $row["message_alerte"] . "</p></a>"; break;
+                            case "1" : echo "<a href='#' class=\"list-group-item\" data-target='#signalementModal'><h4 class='list-group-item-heading'>" . $row["titre_alerte"] . "</h4><p class='list-group-item-text'>" . $row["message_alerte"] . "</p></a>"; break;
+                            case "2" : echo "<a href='#' class=\"list-group-item list-group-item-success\" data-target='#signalementModal'><h4 class='list-group-item-heading'>" . $row["titre_alerte"] . "</h4><p class='list-group-item-text'>" . $row["message_alerte"] . "</p></a>"; break;
+                            case "3" : echo "<a href='#' class=\"list-group-item list-group-item-info\" data-target='#signalementModal'><h4 class='list-group-item-heading'>" . $row["titre_alerte"] . "</h4><p class='list-group-item-text'>" . $row["message_alerte"] . "</p></a>"; break;
+                            case "4" : echo "<a href='#' class=\"list-group-item list-group-item-warning\" data-target='#signalementModal'><h4 class='list-group-item-heading'>" . $row["titre_alerte"] . "</h4><p class='list-group-item-text'>" . $row["message_alerte"] . "</p></a>"; break;
+                            case "5" : echo "<a href='#' class=\"list-group-item list-group-item-danger\" data-target='#signalementModal'><h4 class='list-group-item-heading'>" . $row["titre_alerte"] . "</h4><p class='list-group-item-text'>" . $row["message_alerte"] . "</p></a>"; break;
                         }
                     }
                     echo "</div>";
@@ -71,6 +71,32 @@ $conn->close();
                     echo "0 results";
                 }
             ?>
+            <div class="modal fade" id="signalementModal" tabindex="-1" role="dialog" aria-labelledby="signalementModalLabel">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title" id="signalementModalLabel">Alerte</h4>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="form-group">
+                                    <label for="recipient-name" class="control-label">Recipient:</label>
+                                    <input type="text" class="form-control" id="recipient-name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="message-text" class="control-label">Message:</label>
+                                    <textarea class="form-control" id="message-text"></textarea>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Send message</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <?php require("footer.php"); ?>
