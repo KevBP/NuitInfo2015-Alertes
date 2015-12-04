@@ -7,6 +7,7 @@ $('#alerteModal').on('show.bs.modal', function (event) {
     modal.find('.modal-title').text('Alerte ' + titre);
     modal.find('#message-alerte').text(message);
     modal.find('#date-alerte').text(dalerte);
+    alert(dalerte);
 });
 
 $(document).ready(function(){
