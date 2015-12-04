@@ -37,7 +37,7 @@ $("#plus-events").click(function(){
                 case "5" : res = res + "<a href=\"#\" type=\"button\" class=\"list-group-item list-group-item-danger\" data-toggle=\"modal\" data-target=\"#alerteModal\" data-titrealerte=\"" + data[i].titre_alerte + "\" data-messagealerte='" + data[i].message_alerte + "'><h4 class='list-group-item-heading'>"+ data[i].titre_alerte +"</h4><p class='list-group-item-text'>" + data[i].message_alerte + "</p></a>"; break;
             }
         }
-        $(".list-group").html(escape(res));
+        $(".list-group").html(res);
     }});
 
     $("#plus-events").attr("data-nb", parameter);
