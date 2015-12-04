@@ -8,9 +8,9 @@
 			ORDER BY RAND() LIMIT 1";
 			
 	$req = mysqli_query($con, $sql);
-	$result=$req->fetch_assoc();
+	$result=$req->fetch_assoc("phrase_tips");
 	
-	echo rand(5, 15);
+	echo $result;
 
 	
 	mysqli_close($con);
