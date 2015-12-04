@@ -20,4 +20,4 @@ window.setInterval(function() {
     $.ajax({url: "tips.php", success: function(result){
         $("#tips").html(result);
     }});
-}, 20000);
+}, 10000);
