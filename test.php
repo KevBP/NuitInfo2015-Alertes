@@ -60,11 +60,11 @@ $conn->close();
                 // output data of each row
                 while($row = $result->fetch_assoc()) {
                     switch($row['niveau_alerte']){
-                        case "1" : echo "<a href='#' class=\"gomodal list-group-item\" data-toggle=\"modal\" data-target='#signalementModal'><h4 class='list-group-item-heading' data-titrealerte=\"" .$row["titre_alerte"]."\">" . $row["titre_alerte"] . "</h4><p class='list-group-item-text'>" . $row["message_alerte"] . "</p></a>"; break;
-                        case "2" : echo "<a href='#' class=\"gomodal list-group-item list-group-item-success\" data-toggle=\"modal\" data-target='#signalementModal'><h4 class='list-group-item-heading' data-titrealerte=\"" .$row["titre_alerte"]."\">" . $row["titre_alerte"] . "</h4><p class='list-group-item-text'>" . $row["message_alerte"] . "</p></a>"; break;
-                        case "3" : echo "<a href='#' class=\"gomodal list-group-item list-group-item-info\" data-toggle=\"modal\" data-target='#signalementModal'><h4 class='list-group-item-heading' data-titrealerte=\"" .$row["titre_alerte"]."\">" . $row["titre_alerte"] . "</h4><p class='list-group-item-text'>" . $row["message_alerte"] . "</p></a>"; break;
-                        case "4" : echo "<a href='#' class=\"gomodal list-group-item list-group-item-warning\" data-toggle=\"modal\" data-target='#signalementModal'><h4 class='list-group-item-heading' data-titrealerte=\"" .$row["titre_alerte"]."\">" . $row["titre_alerte"] . "</h4><p class='list-group-item-text'>" . $row["message_alerte"] . "</p></a>"; break;
-                        case "5" : echo "<a href='#' class=\"gomodal list-group-item list-group-item-danger\" data-toggle=\"modal\" data-target='#signalementModal'><h4 class='list-group-item-heading' data-titrealerte=\"" .$row["titre_alerte"]."\">" . $row["titre_alerte"] . "</h4><p class='list-group-item-text'>" . $row["message_alerte"] . "</p></a>"; break;
+                        case "1" : echo "<a href='#' class=\"list-group-item\" data-toggle=\"modal\" data-target='#signalementModal'><h4 class='list-group-item-heading' data-titrealerte=\"" .$row["titre_alerte"]."\">" . $row["titre_alerte"] . "</h4><p class='list-group-item-text'>" . $row["message_alerte"] . "</p></a>"; break;
+                        case "2" : echo "<a href='#' class=\"list-group-item list-group-item-success\" data-toggle=\"modal\" data-target='#signalementModal'><h4 class='list-group-item-heading' data-titrealerte=\"" .$row["titre_alerte"]."\">" . $row["titre_alerte"] . "</h4><p class='list-group-item-text'>" . $row["message_alerte"] . "</p></a>"; break;
+                        case "3" : echo "<a href='#' class=\"list-group-item list-group-item-info\" data-toggle=\"modal\" data-target='#signalementModal'><h4 class='list-group-item-heading' data-titrealerte=\"" .$row["titre_alerte"]."\">" . $row["titre_alerte"] . "</h4><p class='list-group-item-text'>" . $row["message_alerte"] . "</p></a>"; break;
+                        case "4" : echo "<a href='#' class=\"list-group-item list-group-item-warning\" data-toggle=\"modal\" data-target='#signalementModal'><h4 class='list-group-item-heading' data-titrealerte=\"" .$row["titre_alerte"]."\">" . $row["titre_alerte"] . "</h4><p class='list-group-item-text'>" . $row["message_alerte"] . "</p></a>"; break;
+                        case "5" : echo "<a href='#' class=\"list-group-item list-group-item-danger\" data-toggle=\"modal\" data-target='#signalementModal'><h4 class='list-group-item-heading' data-titrealerte=\"" .$row["titre_alerte"]."\">" . $row["titre_alerte"] . "</h4><p class='list-group-item-text'>" . $row["message_alerte"] . "</p></a>"; break;
                     }
                 }
                 echo "</div>";
@@ -77,7 +77,7 @@ $conn->close();
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                            <h4 class="modal-title" id="exampleModalLabel">New message</h4>
+                            <h4 class="modal-title" id="signalementModalLabel">New message</h4>
                         </div>
                         <div class="modal-body">
                             <form>
