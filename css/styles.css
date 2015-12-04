@@ -4,3 +4,9 @@
  body {
    background-image : url("images/blue_sky.jpg");
  }
+ 
+ h2 {
+ 	font-size : 45px;
+ 	text-align : center;
+ 	font-style : bold;
+ }
