@@ -7,6 +7,7 @@
  */
 
 if (isset($_GET['event'])){
+    echo "blabla " . $_GET['event'] ." \n";
     $local = mysqli_real_escape_string($_GET['event']);
     $sql = "SELECT titre_alerte, niveau_alerte,message_alerte FROM ALERTE ORDER BY date_alerte DESC LIMIT $local";
 
@@ -19,4 +20,6 @@ if (isset($_GET['event'])){
     echo $result;
     echo json_encode($result);
 
+}else{
+    echo $_GET['event'];
 }
