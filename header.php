@@ -9,5 +9,9 @@
 	    <link rel="stylesheet" href="/css/bootstrap.min.css" />
 	    <link rel="stylesheet" href="/css/styles.css" />
         <script type="text/javascript" src="/js/jquery.js"></script>
+        <!-- Latest compiled and minified JavaScript -->
+        <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="/js/bootstrap-datepicker.js"></script>
+
 	</head>
 	<body>
