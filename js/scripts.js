@@ -29,9 +29,7 @@ $("#plus-events").click(function(){
         var data = JSON && JSON.parse(result) || $.parseJSON(result);
         var res = "";
         for (i = 0; i < data.length; i++) {
-            switch(data[i].){
-                case "1" :
-            }
+
             res = res + "<a href=\"#\" type=\"button\" class=\"list-group-item\" data-toggle=\"modal\" data-target=\"#alerteModal\" data-titrealerte=\"" + data[i].titre_alerte + "\" data-messagealerte='" + data[i].message_alerte + "'><h4 class='list-group-item-heading'>"+ data[i].titre_alerte +"</h4><p class='list-group-item-text'>" + data[i].titre_alerte + "</p></a>";
         }
         $(".list-group").html(res);
