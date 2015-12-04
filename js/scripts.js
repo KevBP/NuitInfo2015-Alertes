@@ -36,8 +36,6 @@ function escapeHtmlEntities (str) {
     // No jQuery, so use string replace.
     return str
         .replace(/&/g, '&amp;')
-        .replace(/>/g, '&gt;')
-        .replace(/</g, '&lt;')
         .replace(/"/g, '&quot;');
 }
 
