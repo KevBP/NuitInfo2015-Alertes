@@ -18,9 +18,9 @@ $('#alerteModal').on('show.bs.modal', function (event) {
         var data = JSON && JSON.parse(result) || $.parseJSON(result);
         var res = "<div class=\"row\">";
         for (i = 0; i < data.length; i++) {
-            res +="<div class=\"col-lg-3\">Nom : data[i].nom_prenom_signalement</div><div class=\"col-lg-3\">Age : data[i].age_signalement</div><div class=\"col-lg-3\">Sexe : data[i].sexe_signalement</div><div class=\"col-lg-3\">Nom : data[i].description_signalement</div>";
+            res = res + "<div class=\"col-lg-3\">Nom : " + data[i].nom_prenom_signalement + "</div><div class=\"col-lg-3\">Age : " + data[i].age_signalement + "</div><div class=\"col-lg-3\">Sexe : " + data[i].sexe_signalement + "</div><div class=\"col-lg-3\">Description : " + data[i].description_signalement + "</div>";
         }
-        res += "</div>";
+        res = res + "</div>";
 
         $("#toutcon").html(res);
     }});
