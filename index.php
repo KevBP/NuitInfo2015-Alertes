@@ -19,7 +19,7 @@ $conn->close();
 <?php require("header.php"); ?>
 <div class="container">
     <h2>Une anomalie, une urgence, un danger imminent ? Partagez-le pour le bien de tous !</h2>
-    <form class="form" action="search.php" method="post">
+    <form class="form" action="search.php" method="get">
         <div class="input-group">
             <input type="text" name="search" class="form-control" placeholder="Search for...">
               <span class="input-group-btn">
