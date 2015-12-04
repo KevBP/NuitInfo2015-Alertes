@@ -24,6 +24,7 @@ window.setInterval(function() {
 
 $("#plus-events").click(function(){
     $.ajax({url: "ajax-event.php?" + $("#plus-events").attr("data-nb") +1, success: function(result){
+        alert(result);
         var data = JSON && JSON.parse(result) || $.parseJSON(result);
         var res = "";
         for (i = 0; i < data.length; i++) {
