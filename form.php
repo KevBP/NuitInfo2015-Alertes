@@ -40,7 +40,7 @@
 			$erreurs = true;
 		}
 		
-		$date = $date_evenement." ".heure_evenement;
+		$date = $date_evenement." ".$heure_evenement;
 		
 		if (!erreurs) {
 			$sql = "INSERT INTO ALERTE
