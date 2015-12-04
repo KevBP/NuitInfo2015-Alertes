@@ -15,13 +15,13 @@ if (isset($_GET['event'])){
     $req = mysqli_query($con, $sql);
 
 
-    while($row = $req->fetch_assoc()) {
-        $result[] = htmlspecialchars($row, ENT_QUOTES,"UTF-8");
+    while($row = $req->fetch_row()) {
+        $result[] = Array(htmlspecialchars($row[0]), htmlspecialchars($row[1]), htmlspecialchars($row[2]), htmlspecialchars($row[3]));
+        //$result[] = htmlspecialchars($row, ENT_QUOTES,"UTF-8");
     }
-    echo json_encode($result);
+    var_dump($result);
+    //echo json_encode($result);
 
 }else{
     echo $_GET['event'];
 }
-
-phpinfo();
