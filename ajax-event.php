@@ -16,12 +16,11 @@ if (isset($_GET['event'])){
 
 
     while($row = $req->fetch_assoc()) {
-        $result[] = htmlspecialchars($row, ENT_QUOTES,"UTF-8");
+        $result[] =htmlentities(mb_convert_encoding($row, 'UTF-8', 'ASCII'), ENT_SUBSTITUTE, "UTF-8");
+        //$result[] = htmlspecialchars($row, ENT_QUOTES,"UTF-8");
     }
     echo json_encode($result);
 
 }else{
     echo $_GET['event'];
 }
-
-phpinfo();
