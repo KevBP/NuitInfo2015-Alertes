@@ -80,7 +80,7 @@ $conn->close();
                             <h4 class="modal-title" id="alerteModalLabel">New message</h4>
                         </div>
                         <div class="modal-body">
-                            <p id="message-alerte"></p>
+                            <p id="message-alerte">azerty</p>
                         </div>
                     </div>
                 </div>
