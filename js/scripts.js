@@ -28,8 +28,13 @@ $("#plus-events").click(function(){
         var data = JSON && JSON.parse(result) || $.parseJSON(result);
         var res = "";
         for (i = 0; i < data.length; i++) {
-
-            res = res + "<a href=\"#\" type=\"button\" class=\"list-group-item\" data-toggle=\"modal\" data-target=\"#alerteModal\" data-titrealerte=\"" + data[i].titre_alerte + "\" data-messagealerte='" + data[i].message_alerte + "'><h4 class='list-group-item-heading'>"+ data[i].titre_alerte +"</h4><p class='list-group-item-text'>" + data[i].titre_alerte + "</p></a>";
+            switch(data[i].niveau_alerte){
+                case "1" : res = res + "<a href=\"#\" type=\"button\" class=\"list-group-item\" data-toggle=\"modal\" data-target=\"#alerteModal\" data-titrealerte=\"" + data[i].titre_alerte + "\" data-messagealerte='" + data[i].message_alerte + "'><h4 class='list-group-item-heading'>"+ data[i].titre_alerte +"</h4><p class='list-group-item-text'>" + data[i].titre_alerte + "</p></a>";
+                case "2" : res = res + "<a href=\"#\" type=\"button\" class=\"list-group-item list-group-item-success\" data-toggle=\"modal\" data-target=\"#alerteModal\" data-titrealerte=\"" + data[i].titre_alerte + "\" data-messagealerte='" + data[i].message_alerte + "'><h4 class='list-group-item-heading'>"+ data[i].titre_alerte +"</h4><p class='list-group-item-text'>" + data[i].titre_alerte + "</p></a>";
+                case "3" : res = res + "<a href=\"#\" type=\"button\" class=\"list-group-item list-group-item-info\" data-toggle=\"modal\" data-target=\"#alerteModal\" data-titrealerte=\"" + data[i].titre_alerte + "\" data-messagealerte='" + data[i].message_alerte + "'><h4 class='list-group-item-heading'>"+ data[i].titre_alerte +"</h4><p class='list-group-item-text'>" + data[i].titre_alerte + "</p></a>";
+                case "4" : res = res + "<a href=\"#\" type=\"button\" class=\"list-group-item list-group-item-warning\" data-toggle=\"modal\" data-target=\"#alerteModal\" data-titrealerte=\"" + data[i].titre_alerte + "\" data-messagealerte='" + data[i].message_alerte + "'><h4 class='list-group-item-heading'>"+ data[i].titre_alerte +"</h4><p class='list-group-item-text'>" + data[i].titre_alerte + "</p></a>";
+                case "5" : res = res + "<a href=\"#\" type=\"button\" class=\"list-group-item list-group-item-danger\" data-toggle=\"modal\" data-target=\"#alerteModal\" data-titrealerte=\"" + data[i].titre_alerte + "\" data-messagealerte='" + data[i].message_alerte + "'><h4 class='list-group-item-heading'>"+ data[i].titre_alerte +"</h4><p class='list-group-item-text'>" + data[i].titre_alerte + "</p></a>";
+            }
         }
         $(".list-group").html(res);
     }});
