@@ -26,15 +26,21 @@ window.setInterval(function() {
 }, 10000);
 
 $("#plus-events").click(function(){
-    $.ajax({url: "ajax-event.php?event=" + $("#plus-events").attr("data-nb") +1, success: function(result){
+    var parameter = $("#plus-events").attr("data-nb") + 1;
+    $.ajax({url: "ajax-event.php?event=" + parameter, success: function(result){
         var data = JSON && JSON.parse(result) || $.parseJSON(result);
         var res = "";
         for (i = 0; i < data.length; i++) {
-
-            res = res + "<a href=\"#\" type=\"button\" class=\"list-group-item\" data-toggle=\"modal\" data-target=\"#alerteModal\" data-titrealerte=\"" + data[i].titre_alerte + "\" data-messagealerte='" + data[i].message_alerte + "'><h4 class='list-group-item-heading'>"+ data[i].titre_alerte +"</h4><p class='list-group-item-text'>" + data[i].titre_alerte + "</p></a>";
+            switch(data[i].niveau_alerte){
+                case "1" : res = res + "<a href=\"#\" type=\"button\" class=\"list-group-item\" data-toggle=\"modal\" data-target=\"#alerteModal\" data-titrealerte=\"" + data[i].titre_alerte + "\" data-messagealerte='" + data[i].message_alerte + "'><h4 class='list-group-item-heading'>"+ data[i].titre_alerte +"</h4><p class='list-group-item-text'>" + data[i].message_alerte + "</p></a>"; break;
+                case "2" : res = res + "<a href=\"#\" type=\"button\" class=\"list-group-item list-group-item-success\" data-toggle=\"modal\" data-target=\"#alerteModal\" data-titrealerte=\"" + data[i].titre_alerte + "\" data-messagealerte='" + data[i].message_alerte + "'><h4 class='list-group-item-heading'>"+ data[i].titre_alerte +"</h4><p class='list-group-item-text'>" + data[i].message_alerte + "</p></a>"; break;
+                case "3" : res = res + "<a href=\"#\" type=\"button\" class=\"list-group-item list-group-item-info\" data-toggle=\"modal\" data-target=\"#alerteModal\" data-titrealerte=\"" + data[i].titre_alerte + "\" data-messagealerte='" + data[i].message_alerte + "'><h4 class='list-group-item-heading'>"+ data[i].titre_alerte +"</h4><p class='list-group-item-text'>" + data[i].message_alerte + "</p></a>"; break;
+                case "4" : res = res + "<a href=\"#\" type=\"button\" class=\"list-group-item list-group-item-warning\" data-toggle=\"modal\" data-target=\"#alerteModal\" data-titrealerte=\"" + data[i].titre_alerte + "\" data-messagealerte='" + data[i].message_alerte + "'><h4 class='list-group-item-heading'>"+ data[i].titre_alerte +"</h4><p class='list-group-item-text'>" + data[i].message_alerte + "</p></a>"; break;
+                case "5" : res = res + "<a href=\"#\" type=\"button\" class=\"list-group-item list-group-item-danger\" data-toggle=\"modal\" data-target=\"#alerteModal\" data-titrealerte=\"" + data[i].titre_alerte + "\" data-messagealerte='" + data[i].message_alerte + "'><h4 class='list-group-item-heading'>"+ data[i].titre_alerte +"</h4><p class='list-group-item-text'>" + data[i].message_alerte + "</p></a>"; break;
+            }
         }
         $(".list-group").html(res);
     }});
 
-    $("#plus-events").attr("data-nb", $("#plus-events").attr("data-nb") + 1);
+    $("#plus-events").attr("data-nb", parameter);
 });
