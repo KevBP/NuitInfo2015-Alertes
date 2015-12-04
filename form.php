@@ -16,12 +16,12 @@
 		$heure_evenement = mysqli_real_escape_string($con, htmlentities($_POST['heure-evenement']));
 		$niveau = mysqli_real_escape_string($con, htmlentities($_POST['niveau']));
 		
-		if ($message > 0 || $message < 2048) {
+		if ($message < 0 || $message > 2048) {
 			$erreurs = true;
 			echo "Erreur dans la taille du message";
 		}
 		
-		if ($localisation > 0 || $localisation < 256) {
+		if ($localisation < 0 || $localisation > 256) {
 			$erreurs = true;
 			echo "Erreur dans la taille de localisation";
 		}
