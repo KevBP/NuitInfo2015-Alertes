@@ -9,7 +9,7 @@ require("library.php");
 $con = connectToDatabase();
 
 $func = function($value) {
-    return htmlentities($value);
+    return htmlentities($value, ENT_QUOTES);
 };
 
 if (isset($_GET['event'])){
