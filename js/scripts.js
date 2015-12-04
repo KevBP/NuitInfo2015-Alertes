@@ -10,7 +10,7 @@ $('#signalementModal').on('show.bs.modal', function (event) {
 });
 
 
-$("#tips").click(function(){
+$("#tips").onload(function(){
 	var tips = showTips();
 	$("#tips").innerHTML = tips;
 	alert(showTips());
