@@ -25,19 +25,20 @@ window.setInterval(function() {
     }});
 }, 10000);
 
-function escapeHtmlEntities (str) {
-    if (typeof jQuery !== 'undefined') {
-        // Create an empty div to use as a container,
-        // then put the raw text in and get the HTML
-        // equivalent out.
-        return jQuery('<div/>').text(str).html();
-    }
 
-    // No jQuery, so use string replace.
-    return str
-        .replace(/&/g, '&amp;')
-        .replace(/"/g, '&quot;');
+
+function htmlEscape(str) {
+    var stringval="";
+    $.each(str, function (i, element) {
+        alert(element);
+        stringval += element
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#39;')
+    });
+    return String(stringval);
 }
+
+
 
 $("#plus-events").click(function(){
     var parameter = $("#plus-events").attr("data-nb") + 1;
@@ -53,7 +54,7 @@ $("#plus-events").click(function(){
                 case "5" : res = res + "<a href=\"#\" type=\"button\" class=\"list-group-item list-group-item-danger\" data-toggle=\"modal\" data-target=\"#alerteModal\" data-titrealerte=\"" + data[i].titre_alerte + "\" data-messagealerte='" + data[i].message_alerte + "'><h4 class='list-group-item-heading'>"+ data[i].titre_alerte +"</h4><p class='list-group-item-text'>" + data[i].message_alerte + "</p></a>"; break;
             }
         }
-        $(".list-group").html(escapeHtmlEntities(res));
+        $(".list-group").html(htmlEscape(res));
     }});
 
     $("#plus-events").attr("data-nb", parameter);
