@@ -7,7 +7,7 @@ if (mysqli_connect_errno()) {
     echo "Failed to connect to MySQL: " . mysqli_connect_error();
 }
 
-$sql = "SELECT titre_alerte, niveau_alerte,message_alerte FROM ALERTE ORDER BY date_alerte DESC";
+$sql = "SELECT * FROM ALERTE ORDER BY date_alerte DESC";
 $result = $conn->query($sql);
 
 $conn->close();
