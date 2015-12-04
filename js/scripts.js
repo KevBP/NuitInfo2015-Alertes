@@ -5,9 +5,8 @@ $('#alerteModal').on('show.bs.modal', function (event) {
     var dalerte = button.data('datealerte');
     var modal = $(this);
     modal.find('.modal-title').text('Alerte ' + titre);
-    alert(message);
     modal.find('#message-alerte').text(message);
-
+    modal.find('#date-alerte').text(dalerte);
 });
 
 $(document).ready(function(){
