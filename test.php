@@ -108,14 +108,14 @@ $conn->close();
                                                 <input type="text" class="form-control" id="nom_sig" name="nom_sig" placeholder="Nom Prénom de la personne concernée">
                                                 <label for="age_sig">Age</label>
                                                 <input type="text" class="form-control" id="age_sig" name="age_sig" placeholder="Age">
+                                                <label for="description_sig">Description</label>
+                                                <input type="text" class="form-control" id="description_sig" name="description_sig" placeholder="Description">
                                                 <label for="sexe_sig">Sexe</label>
                                                 <select id="sexe_sig" name="sexe_sig">
                                                     <option value="F">Femme</option>
                                                     <option value="H">Homme</option>
                                                     <option value="A">Autre</option>
                                                 </select>
-                                                <label for="description_sig">Description</label>
-                                                <input type="text" class="form-control" id="description_sig" name="description_sig" placeholder="Description">
                                                 <span class="input-group-btn">
                                                     <button type="submit" class="btn btn-default">Envoyer signalement !</button>
                                                 </span>
