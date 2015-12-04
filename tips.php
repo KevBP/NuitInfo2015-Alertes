@@ -8,8 +8,9 @@
 			ORDER BY RAND() LIMIT 1";
 			
 	$req = mysqli_query($con, $sql);
+	$result=$req->fetch_assoc();
 	
-	echo $req;
+	echo $result;
 
 	
 	mysqli_close($con);
