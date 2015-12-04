@@ -6,7 +6,6 @@ $(document).ready(function(){
 
 
 $("#tips").click(function(){
-    alert("blah");
 	var tips = showTips();
 	$("#tips").innerHTML = tips;
 });
