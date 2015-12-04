@@ -15,11 +15,10 @@ $(document).ready(function(){
 	alert("Bite");
 	var tips = showTips();
 	$("#tips").innerHTML = tips;
-});
 
-$("#tips").click(function(){
-    $.ajax({url: "tips.php", success: function(result){
-        alert(result);
-        $("#tips").html(result);
-    }});
+    $("#tips").click(function(){
+        $.ajax({url: "tips.php", success: function(result){
+            $("#tips").html(result);
+        }});
+    });
 });

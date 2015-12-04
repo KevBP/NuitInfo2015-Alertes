@@ -10,6 +10,8 @@
 	$req = mysqli_query($con, $sql);
 	
 	echo $req;
+
+	echo "dsqdq";
 	
 	mysqli_close($con);
 ?>
