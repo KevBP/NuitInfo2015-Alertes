@@ -18,6 +18,7 @@ $(document).ready(function(){
 
 $("#tips").click(function(){
     $.ajax({url: "tips.php", success: function(result){
+        alert(result);
         $("#tips").html(result);
     }});
 });
