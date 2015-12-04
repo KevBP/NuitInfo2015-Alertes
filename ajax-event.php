@@ -19,7 +19,7 @@ if (isset($_GET['event'])){
         $result[] = Array(htmlspecialchars($row[0]), htmlspecialchars($row[1]), htmlspecialchars($row[2]), htmlspecialchars($row[3]));
         //$result[] = htmlspecialchars($row, ENT_QUOTES,"UTF-8");
     }
-    var_dump($result);
+    //var_dump($result);
     echo json_encode($result);
 
 }else{
