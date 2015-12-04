@@ -16,6 +16,11 @@
 		$heure_evenement = mysqli_real_escape_string($con, htmlentities($_POST['heure-evenement']));
 		$niveau = mysqli_real_escape_string($con, htmlentities($_POST['niveau']));
 		
+		if (strlen($titre) < 5 || strlen($titre) > 256) {
+			$erreurs = true;
+			echo "Erreur, le titre doit faire plus de 5 caractères et moins de 256.";
+		}
+		
 		if (strtotime($date_evenement) == -1) {
 			$erreurs = true;
 			echo "Erreur avec la date de l'évènement !";
