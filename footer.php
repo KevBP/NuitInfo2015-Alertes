@@ -34,5 +34,12 @@ Voici la liste des sponsors, elle doit toujours être visible avec leur logo (en
     <a href="http://www.jm-informatique.com/"><img src="http://www.jm-informatique.com/images/logo.png" alt="jm-informatique" class="img-responsive" /></a>
 </p>
 </div>
+
+<!-- Latest compiled and minified JavaScript -->
+<script type="text/javascript" src="/js/jquery.js"></script>
+<script type="text/javascript" src="/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/js/bootstrap-datepicker.js"></script>
+<script type="text/javascript" src="/js/scripts.js"></script>
+<script>function showTips() { xmlhttp.open("GET", "tips.php", true); xmlhttp.send(); return xhttp.responseText; }</script>
 </body>
 </html>
