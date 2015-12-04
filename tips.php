@@ -10,7 +10,7 @@
 	$req = mysqli_query($con, $sql);
 	$result=$req->fetch_assoc();
 	
-	echo $result;
+	echo $result[0];
 
 	
 	mysqli_close($con);
