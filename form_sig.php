@@ -27,7 +27,7 @@
 			echo "Erreur age";
 		}
 		
-		if ($sexe != "H" || $sexe !="F") {
+		if ($sexe != 'H' && $sexe !='F') {
 			$erreurs = true;
 			echo "Erreur sexe";
 		}
