@@ -7,11 +7,15 @@ $('#exampleModal').on('show.bs.modal', function (event) {
     modal.find('.modal-title').text('New message to ' + recipient)
     modal.find('.modal-body input').val(recipient)
 })
-
+/*
+function callBackTips()
+{ alert("Bite"); $.ajax({url: "tips.php", success: function(result){ $("#tips").html(result); setTimeOut(callBackTips(); alert("Zizi");
+}
+*/
 $(document).ready(function(){
     $.ajax({url: "tips.php", success: function(result){
         $("#tips").html(result);
-        callBackTips();
+        //callBackTips();
     }});
 });
 
