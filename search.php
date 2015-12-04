@@ -12,12 +12,6 @@ if (isset($_POST["search"])){
     $result = $conn->query($sql);
 
     $conn->close();
-}else {
-
-    $sql = "SELECT * FROM ALERTE ORDER BY date_soumission_alerte DESC limit 3";
-    $result = $conn->query($sql);
-
-    $conn->close();
 }
 
 
