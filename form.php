@@ -31,11 +31,6 @@
 			echo "Erreur, le titre doit faire plus de 5 caractères et moins de 256.";
 		}
 		
-		if (strtotime($date_evenement) == -1) {
-			$erreurs = true;
-			echo "Erreur avec la date de l'évènement !";
-		}
-		
 		if ($niveau < 1 || $niveau > 5) {
 			$erreurs = true;
 		}
