@@ -16,7 +16,7 @@ if (isset($_GET['event'])){
     while($row = $req->fetch_assoc()) {
         $result[] = $row;
     }
-
+    echo $result;
     echo json_encode($result);
 
 }
