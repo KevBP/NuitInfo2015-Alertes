@@ -13,7 +13,7 @@
 		$age = mysqli_real_escape_string($con, htmlentities($_POST['age_sig']));
 		$sexe = mysqli_real_escape_string($con, htmlentities($_POST['sexe_sig']));
 		$description = mysqli_real_escape_string($con, htmlentities($_POST['description_sig']));
-		echo $_POST['id-alerte'];
+		echo isset($_POST['id-alerte']);
 		//echo "nom = " . $nom . ", age = " . $age . ", sexe = " . $sexe . ", " . $description;
 		if (strlen($nom) < 1) {
 			$erreurs = true;
