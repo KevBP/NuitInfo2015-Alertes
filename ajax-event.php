@@ -6,10 +6,10 @@
  * Time: 03:35
  */
 require("library.php");
+$con = connectToDatabase();
 
 if (isset($_GET['event'])){
-    $local = mysqli_real_escape_string($con, $_GET['event']);
-    echo "blabla " . $local ." \n";
+    $local = mysqli_real_escape_string($con, htmlentities($_GET['event']));
     $sql = "SELECT titre_alerte, niveau_alerte,message_alerte FROM ALERTE ORDER BY date_alerte DESC LIMIT $local";
 
     $req = mysqli_query($con, $sql);
@@ -18,7 +18,6 @@ if (isset($_GET['event'])){
     while($row = $req->fetch_assoc()) {
         $result[] = $row;
     }
-    echo $result;
     echo json_encode($result);
 
 }else{
