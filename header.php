@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+<<<<<<< HEAD
 	<head>
 	    <meta charset="utf-8">
 	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,9 +10,10 @@
 	    <link rel="stylesheet" href="/css/bootstrap.min.css" />
 	    <link rel="stylesheet" href="/css/styles.css" />
 	    <!-- Latest compiled and minified JavaScript -->
-	    <script type="text/javascript" src="/js/jquery.js"></script>
-	    <script type="text/javascript" src="/js/bootstrap.min.js"></script>
-	    <script type="text/javascript" src="/js/bootstrap-datepicker.js"></script>
+    <script type="text/javascript" src="/js/jquery.js"></script>
+    <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/js/bootstrap-datepicker.js"></script>
+    <script type="text/javascript" src="/js/scripts.js"></script>
 	    <script>function showTips() { xmlhttp.open("GET", "tips.php", true); xmlhttp.send(); return xhttp.responseText; }</script>
 	</head>
 	<body>
