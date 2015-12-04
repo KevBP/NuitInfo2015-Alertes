@@ -7,7 +7,7 @@ if (mysqli_connect_errno()) {
     echo "Failed to connect to MySQL: " . mysqli_connect_error();
 }
 
-$sql = "SELECT titre_alerte, niveau_alerte,message_alerte FROM ALERTE ORDER BY date_alerte DESC";
+$sql = "SELECT titre_alerte, niveau_alerte,message_alerte FROM ALERTE ORDER BY date_alerte DESC limit 3";
 $result = $conn->query($sql);
 
 $conn->close();
@@ -71,6 +71,9 @@ $conn->close();
                     echo "0 results";
                 }
             ?>
+
+            <button type="button" class="btn btn-default" id="plus-events" aria-label="Plus" data-nb="5">Plus... :)</button>
+
             <div class="modal fade" id="alerteModal" tabindex="-1" role="dialog" aria-labelledby="alerteModalLabel">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
