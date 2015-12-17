@@ -4,7 +4,7 @@ Participation 2015 à la Nuit de l'Info, le thème de cette année était : urge
 
 ## Equipe
 
-Chef : [Antoine Lavier](https://github.com/N0un "Page github d'Antoine")
+Chef : [Antoine Lavier](https://github.com/N0un "Page github d'Antoine")  
 Les membres :
 * [Naum Spaseski](https://github.com/nomce "Page github de Naum")
 * [Kevin Boulala](https://github.com/KevBP "Page github de Kevin")
@@ -18,7 +18,7 @@ Nous sommes en Master 2 Informatique à l'Université de Franche Comté. Naum et
 
 ## Les autres équipes de Besançon
 
-*Cette section sera complétée si d'autres groupes rendent publiques leur travail*
+*Cette section sera complétée si d'autres groupes rendent publiques leurs travaux*
 
 ## Les sponsors
 
