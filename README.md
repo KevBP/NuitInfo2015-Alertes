@@ -1,6 +1,14 @@
 # Nuit Info 2015 - Alertes
 
-Participation 2015 à la Nuit de l'Info, le thème de cette année était : urgence et réseaux sociaux.
+Participation 2015 à la [Nuit de l'Info](http://nuitdelinfo.com/), le thème de cette année était : [urgence et réseaux sociaux](http://nuitdelinfo.com/nuitinfo/_media/la_nuit_de_l_info_2015_-_sujet.pdf).  
+
+## La Nuit de l'Info 2015, c'est...
+
+* 2847 participants,
+* 366 équipes,
+* sur 45 sites,
+* 100 écoles,
+* et 32 défis.
 
 ## Equipe
 
